@@ -18,7 +18,7 @@
 
 	<link rel="canonical" href="https://demo-basic.adminkit.io/pages-blank.html" />
 
-	<title>Sistem Pendukung Keputusan</title>
+	<title>Kriteria</title>
 
 	<link href="adminkit-dev/static/css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -62,7 +62,7 @@
 		<div class="main">
 			<main class="content">
 				<div class="container-fluid p-0">
-					<h1 class="h3 mb-3">Data <strong>Alternatif</strong></h1>
+					<h1 class="h3 mb-3">Data <strong>Kriteria</strong></h1>
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
