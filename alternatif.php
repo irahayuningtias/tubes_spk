@@ -59,21 +59,101 @@
 			</div>
 		</nav>
 
+
+		<style>
+			table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+			}
+
+			td, th {
+			border: 1px solid #dddddd;
+			text-align: center;
+			padding: 8px;
+			}
+
+			tr{
+				height: 35px;
+			}
+
+			tr:nth-child(even) {
+			background-color: rgba(150, 212, 212, 0.4);
+			}
+		</style>
+
 		<div class="main">
 			<main class="content">
 				<div class="container-fluid p-0">
 					<h1 class="h3 mb-3">Data <strong>Alternatif</strong></h1>
-					<div class="row">
-						<div class="col-12">
-							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title mb-0">Empty card</h5>
-								</div>
-								<div class="card-body">
-								</div>
-							</div>
-						</div>
-					</div>
+					<table>
+						<tr>
+							<th rowspan="2">Alternatif</th>
+							<th colspan="6">Kriteria</th>
+						</tr>
+						<tr>
+							<th>C1</th>
+							<th>C2</th>
+							<th>C3</th>
+							<th>C4</th>
+							<th>C5</th>
+							<th>C6</th>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
 
 				</div>
 			</main>
