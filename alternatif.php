@@ -1,5 +1,24 @@
 <?php
     include 'config.php';
+	
+	session_start();
+
+	if(isset($_POST['alternatif'])){
+		$id = $_POST['id'];
+    $alternatif = $_POST['alternatif'];
+
+    $result = mysqli_query($connect, "SELECT *FROM alternatif");
+	
+	if(!$result) { echo "Error: " . mysqli_error($conn); }
+
+    if ($result->num_rows > 0) {
+
+            while($row = $result->fetch_assoc()) {
+                echo $id;
+            }
+		}
+	}
+
 ?>
 
 <!DOCTYPE html>
@@ -80,6 +99,11 @@
 			tr:nth-child(even) {
 			background-color: rgba(150, 212, 212, 0.4);
 			}
+
+			.card-footer{
+				top: 500px;
+			}
+
 		</style>
 
 		<div class="main">
@@ -99,61 +123,18 @@
 							<th>C5</th>
 							<th>C6</th>
 						</tr>
+
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td>echo $id</td>
+							<td>{{ $alternatif->alternatif}}</td>
 						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
+
 					</table>
+
+
+					<div class="card-footer">
+                  		<button type="submit" class="btn btn-primary">Submit</button>
+                	</div>
 
 				</div>
 			</main>
