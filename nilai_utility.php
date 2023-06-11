@@ -94,99 +94,72 @@ include 'config.php';
                            </ul>
                            <!-- Isi Matrisk -->
                            <?php
-                           include("config.php");
-                           $s = mysqli_query($k21, "select * from kriteria");
-                           $h = mysqli_num_rows($s);
+include ("config.php");
+$s=mysqli_query($k21,"select * from kriteria");
+$h=mysqli_num_rows($s);
 
 
-                           ?>
+?>
 
-                           <div class="box-header">
-                              <h3 class="box-title ">Nilai Matriks Ternormalisasi</h3>
-                           </div>
+<div class="box-header">
+    <h3 class="box-title " >Nilai Matriks Ternormalisasi</h3>
+</div>
 
-                           <table class="table table-bordered table-responsive">
-                              <thead>
-                                 <tr>
-                                    <th rowspan="2">No</th>
-                                    <th rowspan="2">Keterangan</th>
-                                    <th colspan="<?php echo $h; ?>">Kriteria</th>
-                                 </tr>
-                                 <tr>
-                                    <?php
-                                    for ($n = 1; $n <= $h; $n++) {
-                                       echo "<th>C{$n}</th>";
-                                    }
-                                    ?>
-                                 </tr>
-                              </thead>
-                              <tbody>
-                              <?php
-                                    $data = mysqli_query($k21, "SELECT * FROM alternatif ORDER BY id_alt");
-                                    $no = 1;
-                                    while ($alternatif = $data->fetch_assoc()) { ?>
-                                        <tr>
-                                            <td><?= $no++; ?></td>
-                                            <td><?= $alternatif['keterangan'] ?></td>
-                                            <?php
-                                            $alternatifKode = $alternatif['id_alt'];
-                                            $sql = mysqli_query($k21,"SELECT * FROM nilai WHERE id_alt='$alternatifKode' ORDER BY id_criteria");
-                                            while ($data_nilai = $sql->fetch_assoc()) { ?>
-                                                <?php
-                                                $kriteriaKode = $data_nilai['id_criteria'];
-                                                $sqli = mysqli_query($k21, "SELECT * FROM kriteria WHERE id_criteria='$kriteriaKode' ORDER BY id_criteria");
-                                                while ($kriteria = $sqli->fetch_assoc()) {
-                                                ?>
-                                                    <?php if ($kriteria['tipe'] == "Benefit") { ?>
-                                                        <?php
-                                                        // nilai tertinggi
-                                                        $sqlMax =  mysqli_query($k21, "SELECT id_criteria, MAX(nilai) AS max FROM nilai WHERE id_criteria='$kriteriaKode' GROUP BY id_criteria");
-                                                        while ($nilai_Max = $sqlMax->fetch_assoc()) {
-                                                        ?>
-                                                            <?php $nilai_Cmax = $nilai_Max['max']; ?>
-                                                        <?php } ?>
-                                                        <?php
-                                                        // nilai terrendah
-                                                        $sqlMin =  mysqli_query($k21, "SELECT id_criteria, MIN(nilai) AS min FROM nilai WHERE id_criteria='$kriteriaKode' GROUP BY id_criteria");
-                                                        while ($nilai_Min = $sqlMin->fetch_assoc()) {
-                                                        ?>
-                                                            <?php $nilai_Cmin = $nilai_Min['min']; ?>
-                                                        <?php } ?>
+<table class="table table-bordered table-responsive">
+<thead>
+<tr>
+<th rowspan="2">No</th>
+<th rowspan="2">Keterangan</th>
+<th colspan="<?php echo $h; ?>">Kriteria</th>
+</tr>
+<tr>
+<?php
+for($n=1;$n<=$h;$n++){
+	echo"<th>C{$n}</th>";
+}
+?>
+</tr>
+</thead>
+<tbody>
+<?php
+$i=0;
+$a=mysqli_query($k21,"select * from alternatif order by id_alt asc");
 
-                                                        <!-- proses nilai utiliti -->
-                                                        <td><?= number_format($nilai_utiliti = ($data_nilai['nilai'] - $nilai_Cmin) / ($nilai_Cmax - $nilai_Cmin), 2); ?></td>
 
-                                                    <?php } elseif ($kriteria['tipe'] == "Cost") { ?>
-                                                        <?php
-                                                        // nilai tertinggi
-                                                        $sqlMax =  mysqli_query($k21, "SELECT id_criteria, MAX(nilai) AS max FROM nilai WHERE id_criteria='$kriteriaKode' GROUP BY id_criteria");
-                                                        while ($nilai_Max = $sqlMax->fetch_assoc()) {
-                                                        ?>
-                                                            <?php $nilai_Cmax = $nilai_Max['max']; ?>
-                                                        <?php } ?>
-                                                        <?php
-                                                        // nilai terrendah
-                                                        $sqlMin =  mysqli_query($k21, "SELECT id_criteria, MIN(nilai) AS min FROM nilai WHERE id_criteria='$kriteriaKode' GROUP BY id_criteria");
-                                                        while ($nilai_Min = $sqlMin->fetch_assoc()) {
-                                                        ?>
-                                                            <?php $nilai_Cmin = $nilai_Min['min']; ?>
-                                                        <?php } ?>
 
-                                                        <!-- proses nilai utiliti -->
-                                                        <td><?= number_format($nilai_utiliti = ($nilai_Cmax - $data_nilai['nilai']) / ($nilai_Cmax - $nilai_Cmin), 2);?></td>
+while($da=mysqli_fetch_assoc($a)){
 
-                                                    <?php } ?>
-                                                <?php } ?>
-                                            <?php } ?>
-                                        </tr>
-                                    <?php } ?>
-                                
-                              </tbody>
-                           </table>
 
-                        </div>
+	echo "<tr>
+		<td>".(++$i)."</td>
+		<td>$da[keterangan]</td>";
+		$idalt=$da['id_alt'];
+	//ambil nilai
+			
+			$n=mysqli_query($k21,"select * from nilai where id_alt='$idalt' order by id_nilai asc" );
+	
+		while($dn=mysqli_fetch_assoc($n)){
+			$idk=$dn['id_criteria'];
+			
+			//nilai kuadrat
+			
+			$nilai_kuadrat=0;
+			$k=mysqli_query($k21,"select * from nilai where id_criteria='$idk' ");
+			while($dkuadrat=mysqli_fetch_assoc($k)){
+				$nilai_kuadrat=$nilai_kuadrat+($dkuadrat['nilai']*$dkuadrat['nilai']);
+			}	
+				
+			echo "<td align='center'>".round(($dn['nilai']/sqrt($nilai_kuadrat)),3)."</td>";
+			
+		}
+		echo "</tr>\n";
 
-                     </div>
+}
+?>
+
+</tbody>
+</table>
+</div>
          </main>
 
          <footer class="footer">
