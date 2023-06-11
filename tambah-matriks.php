@@ -48,7 +48,6 @@ include 'config.php';
 						</a>
 					</li>
 					<li class="sidebar-item">
-<<<<<<< HEAD:matriksalternatif.php
 						<a class="sidebar-link" href="matriksalternatif.php">
 							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
 						</a>
@@ -56,7 +55,6 @@ include 'config.php';
 						<a class="sidebar-link" href="matriksalternatif.php">
 							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Perhitungan</span>
 						</a>
-=======
 						<a class="sidebar-link" href="tambah-matriks.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
             			</a>
@@ -65,7 +63,6 @@ include 'config.php';
 						<a class="sidebar-link" href="perhitungan.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Perhitungan</span>
             			</a>
->>>>>>> ef45bd3d96943eb5fa56e561a145f9db3853c0e3:tambah-matriks.php
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="logout.php">
@@ -84,7 +81,6 @@ include 'config.php';
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-<<<<<<< HEAD:matriksalternatif.php
 									<!-- Matriks -->
 									<ul class="nav nav-tabs">
 										<li class="nav-item">
@@ -101,10 +97,8 @@ include 'config.php';
 										</li>
 									</ul>
 									<!-- Isi Matrisk -->
-									config.php
-=======
+
 									<h5 class="card-title mb-0">Matriks Keputusan</h5>
->>>>>>> ef45bd3d96943eb5fa56e561a145f9db3853c0e3:tambah-matriks.php
 								</div>
 								<div class="card-body">
 									<div class="table-responsive">

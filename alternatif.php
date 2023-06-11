@@ -111,7 +111,6 @@
 			<main class="content">
 				<div class="container-fluid p-0">
 					<h1 class="h3 mb-3">Data <strong>Alternatif</strong></h1>
-<<<<<<< HEAD
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
@@ -158,7 +157,6 @@
 							</div>
 						</div>
 					</div>
-=======
 					<table>
 						<tr>
 							<th rowspan="2">Alternatif</th>
@@ -184,8 +182,6 @@
 					<div class="card-footer">
                   		<button type="submit" class="btn btn-primary">Submit</button>
                 	</div>
->>>>>>> 11d8d51758bf4a8a8ed26456b031bf5a59e3a2fb
-
 				</div>
 			</main>
 
