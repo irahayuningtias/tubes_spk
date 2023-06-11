@@ -110,6 +110,7 @@ include 'config.php';
 									<div class="table-responsive">
 
 									</div>
+
 									<h5 class="card-title mb-0">Kriteria</h5>
 								</div>
 								<div class="card-body">
@@ -151,16 +152,6 @@ include 'config.php';
 							</div>
 						</div>
 					</div>
-					<h1 class="h3 mb-3">Data <strong>Alternatif</strong></h1>
-					<table>
-						<tr>
-							<th>Kriteria (C)</th>
-							<th>Keterangan</th>
-							<th>Bobot</th>
-							<th>Atribut</th>
-						</tr>
-					</table>
-
 				</div>
 			</main>
 
