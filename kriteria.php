@@ -24,6 +24,29 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
+		<style>
+			table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+			}
+
+			td, th {
+			border: 1px solid #dddddd;
+			text-align: center;
+			padding: 8px;
+			}
+
+			tr{
+				height: 35px;
+			}
+
+			tr:nth-child(even) {
+			background-color: rgba(150, 212, 212, 0.4);
+			}
+		</style>
+
+
 <body>
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar js-sidebar">
@@ -67,6 +90,7 @@
 		<div class="main">
 			<main class="content">
 				<div class="container-fluid p-0">
+<<<<<<< HEAD
 					<h1 class="h3 mb-3">Data <strong>Kriteria</strong></h1>
 					<div class="row">
 						<div class="col-12">
@@ -113,6 +137,17 @@
 							</div>
 						</div>
 					</div>
+=======
+					<h1 class="h3 mb-3">Data <strong>Alternatif</strong></h1>
+					<table>
+						<tr>
+							<th>Kriteria (C)</th>
+							<th>Keterangan</th>
+							<th>Bobot</th>
+							<th>Atribut</th>
+						</tr>
+					</table>
+>>>>>>> 11d8d51758bf4a8a8ed26456b031bf5a59e3a2fb
 
 				</div>
 			</main>
