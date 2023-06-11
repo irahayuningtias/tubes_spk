@@ -79,6 +79,9 @@ include 'config.php';
 										<li class="nav-item">
 											<a class="nav-link active" aria-current="page" href="#">Isi Matriks</a>
 										</li>
+                              <li class="nav-item">
+											<a class="nav-link" aria-current="page" href="nilai_utility.php">Normalisasi Matriks</a>
+										</li>
 										<li class="nav-item">
 											<a class="nav-link" aria-current="page" href="matriks_ternormlisasi.php">Nilai Matriks Ternomalisasi</a>
 										</li>
@@ -90,46 +93,60 @@ include 'config.php';
 										</li>
 									</ul>
 									<!-- Isi Matrisk -->
+                        <?php
+                        include("config.php");
+                        $s = mysqli_query($k21, "select * from kriteria");
+                        $h = mysqli_num_rows($s);
 
-									<h5 class="card-title mb-0">Matriks Keputusan</h5>
-								</div>
-								<div class="card-body">
-									<div class="table-responsive">
-                        				<table id="add-row" class="display table table-striped table-hover">
-											<thead>
-												<tr>
-													<th style="width: 6%">ID</th>
-													<th>Alternatif</th>
-													<th>Kriteria</th>
-													<th>Nilai</th>
-													<th style="width: 10%">Aksi</th>
-												</tr>
-											</thead>
-											<tbody>
-											<?php
-											$sql = "SELECT id_nilai, id_alt, id_criteria, nilai FROM nilai";
-											$query = mysqli_query($connect, $sql);
-											if(!$query){
-												die('SQL Error: '.mysqli_error($connect));
-											}
 
-											while($row = mysqli_fetch_assoc($query)){
-												echo '<tr>
-													<td>'.$row['id_nilai'].'</td>
-													<td>'.$row['id_alt'].'</td>
-													<td>'.$row['id_criteria'].'</td>
-													<td>'.$row['nilai'].'</td>
-													</tr>';
+                        ?>
 
-											}
-											?>
-											<tr>
-												
-											</tr>
-											</tbody>
-										</table>
-                    				</div>
-								</div>
+                        <div class="box-header">
+                           <h3 class="box-title ">Nilai Matriks</h3>
+                        </div>
+                        <div class="table table-bordered table-responsive">
+                           <table class="table table-bordered table-responsive">
+                              <thead>
+                                 <tr>
+                                    <th rowspan="2">No</th>
+                                    <th rowspan="2">Keterangan</th>
+                                    <th colspan="<?php echo $h; ?>">Kriteria</th>
+                                 </tr>
+                                 <tr>
+                                    <?php
+                                    for ($n = 1; $n <= $h; $n++) {
+                                       echo "<th>C{$n}</th>";
+                                    }
+                                    ?>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <?php
+                                 $i = 0;
+                                 $a = mysqli_query($k21, "select * from alternatif order by id_alt asc;");
+
+
+
+                                 while ($da = mysqli_fetch_assoc($a)) {
+                                    echo "<tr>
+		<td>" . (++$i) . "</td>
+		<td>" . $da['keterangan'] . "</td>";
+                                    $idalt = $da['id_alt'];
+                                    //ambil nilai
+                                    $n = mysqli_query($k21, "select * from nilai where id_alt='$idalt' order by id_nilai asc");
+
+                                    while ($dn = mysqli_fetch_assoc($n)) {
+
+                                       echo "<td align='center'>$dn[nilai]</td>";
+                                    }
+                                    echo "</tr>\n";
+
+                                 }
+
+                                 ?>
+
+                              </tbody>
+                           </table>
 							</div>
 						</div>
 					</div>
