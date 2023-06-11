@@ -52,7 +52,7 @@ include 'config.php';
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
             			</a>
 					</li>
-					<li class="sidebar-item active">
+					<li class="sidebar-item">
 						<a class="sidebar-link" href="perhitungan.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Perhitungan</span>
             			</a>
@@ -76,16 +76,11 @@ include 'config.php';
 								<div class="card-header">
 									<!-- Matriks -->
 									<ul class="nav nav-tabs">
-										<li class="nav-item">
-											<a class="nav-link active" aria-current="page" href="perhitungan.php">Isi Matriks</a>
+									<li class="nav-item">
+											<a class="nav-link " aria-current="page" href="perhitungan.php">Isi Matriks</a>
 										</li>
-<<<<<<< HEAD
-                             			<li class="nav-item">
-											<a class="nav-link" aria-current="page" href="nilai_utility.php">Nilai Utility</a>
-=======
                               			<li class="nav-item">
-											<a class="nav-link" aria-current="page" href="normalisasiBobot.php">Normalisasi Bobot</a>
->>>>>>> 13afe9e98480053cd726b462abf875a491b0bebd
+											<a class="nav-link active" aria-current="page" href="normalisasiBobot.php">Normalisasi Bobot</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" aria-current="page" href="normalisasiMatriks.php">Matriks Normalisasi</a>
@@ -106,53 +101,34 @@ include 'config.php';
 									<!-- Isi Matrisk -->
                         <?php
                         include("config.php");
-                        $s = mysqli_query($k21, "select * from kriteria");
-                        $h = mysqli_num_rows($s);
-
-
+                        $query = mysqli_query($connect, "select * from kriteria");
+                        $h = mysqli_num_rows($query);
                         ?>
-						<br>
+
+                        <br>
                         <div class="table table-bordered table-responsive">
                            <table class="table table-bordered table-responsive">
                               <thead>
                                  <tr>
-                                    <th rowspan="2">No</th>
-                                    <th rowspan="2">Keterangan</th>
-                                    <th colspan="<?php echo $h; ?>">Kriteria</th>
-                                 </tr>
-                                 <tr>
-                                    <?php
-                                    for ($n = 1; $n <= $h; $n++) {
-                                       echo "<th>C{$n}</th>";
-                                    }
-                                    ?>
+                                    <th>Kriteria</th>
+                                    <th>Keterangan</th>
+                                    <th>Bobot</th>
                                  </tr>
                               </thead>
                               <tbody>
                                  <?php
-                                 $i = 0;
-                                 $a = mysqli_query($k21, "select * from alternatif order by id_alt asc;");
-
-
-
+                                 $sql = "SELECT kriteria, keterangan, bobot FROM kriteria";
+                                 $a = mysqli_query($connect,$sql );
                                  while ($da = mysqli_fetch_assoc($a)) {
-                                    echo "<tr>
-		<td>" . (++$i) . "</td>
-		<td>" . $da['keterangan'] . "</td>";
-                                    $idalt = $da['id_alt'];
-                                    //ambil nilai
-                                    $n = mysqli_query($k21, "select * from nilai where id_alt='$idalt' order by id_nilai asc");
-
-                                    while ($dn = mysqli_fetch_assoc($n)) {
-
-                                       echo "<td align='center'>$dn[nilai]</td>";
-                                    }
-                                    echo "</tr>\n";
-
+                                    ?>
+											<tr>
+												<td><?php echo $da['kriteria'];?></td>
+												<td><?php echo $da['keterangan'];?></td>
+                                                <td><?php echo $da['bobot'];?></td>
+                                            </tr>
+                                    <?php
                                  }
-
                                  ?>
-
                               </tbody>
                            </table>
 							</div>
