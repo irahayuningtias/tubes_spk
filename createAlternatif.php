@@ -1,24 +1,10 @@
 <?php
     include 'config.php';
-	
-	session_start();
 
-	if(isset($_POST['alternatif'])){
-		$id = $_POST['id'];
-    $alternatif = $_POST['alternatif'];
-
-    $result = mysqli_query($connect, "SELECT *FROM alternatif");
-	
-	if(!$result) { echo "Error: " . mysqli_error($conn); }
-
-    if ($result->num_rows > 0) {
-
-            while($row = $result->fetch_assoc()) {
-                echo $id;
-            }
-		}
-	}
-
+	$id = $_POST['id_alt'];
+	$alt = $_POST['alternatif'];
+	mysqli_query($connect, "UPDATE alternatif SET id_alt='$id', alternatif='$alt' WHERE id_alt='$id'");
+	header("Location: alternatif.php");
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +51,7 @@
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
             			</a>
 					</li>
-					<li class="sidebar-item">
+                    <li class="sidebar-item">
 						<a class="sidebar-link" href="perhitungan.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Perhitungan</span>
             			</a>
@@ -79,112 +65,45 @@
 			</div>
 		</nav>
 
-
-		<style>
-			table {
-			font-family: arial, sans-serif;
-			border-collapse: collapse;
-			width: 100%;
-			}
-
-			td, th {
-			border: 1px solid #dddddd;
-			text-align: center;
-			padding: 8px;
-			}
-
-			tr{
-				height: 35px;
-			}
-
-			tr:nth-child(even) {
-			background-color: rgba(150, 212, 212, 0.4);
-			}
-
-			.card-footer{
-				top: 500px;
-			}
-
-		</style>
-
 		<div class="main">
 			<main class="content">
 				<div class="container-fluid p-0">
-					<h1 class="h3 mb-3">Data <strong>Alternatif</strong></h1>
-<<<<<<< HEAD
+					<h1 class="h3 mb-3">Edit Data <strong>Alternatif</strong></h1>
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<a href="createAlternatif.php">
-										<button class="btn btn-primary">Tambah Data</button>
-									</a>
+									<h5 class="card-title mb-0">Alternatif</h5>
 								</div>
 								<div class="card-body">
-								<div class="table-responsive">
-                        				<table id="add-row" class="display table table-striped table-hover">
-											<thead>
-												<tr>
-													<th style="width: 6%">Alternatif</th>
-													<th>Keterangan</th>
-													<th style="width: 20%">Aksi</th>
-												</tr>
-											</thead>
-											<tbody>
-											<?php
-											$sql = "SELECT * FROM alternatif";
-											$query = mysqli_query($connect, $sql);
-											while($row = mysqli_fetch_assoc($query)){
+									<?php
+										$id = $_GET['id_alt'];
+										$data = mysqli_query($connect, "SELECT * FROM alternatif WHERE id_alt=$id");
+										while($d = mysqli_fetch_array($data)){
 											?>
-											<tr>
-												<td><?php echo $row['alternatif'];?></td>
-												<td><?php echo $row['keterangan'];?></td>
-												<td>
-													<a href="editAlternatif.php?id=<?php echo $row['id_alt'];?>">
-														<button class="btn btn-warning">Edit</button>
-													</a>
-													<a href="hapusAlternatif.php?id=<?php echo $row['id_alt'];?>">
-														<button class="btn btn-danger">Hapus</button>
-													</a>
-												</td>
-											</tr>
+											<form method="POST" action="edit-alternatif.php">
+													<table id="add-row" class="display table table-striped table-hover">
+														<tr>
+															<td>ID</td>
+															<td><input type="text" name="id_alt" value=<?php echo $id;?>></td>
+														</tr>
+														<tr>
+															<td>Alternatif</td>
+															<td><input type="text" name="alternatif" value=<?php echo $alt;?>></td>
+														</tr>	
+														<tr>
+															<td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
+															<td><input type="submit" name="update" value="Update"></td>
+														</tr>
+													</table>
+											</form>
 											<?php
-											}
-											?>
-											</tbody>
-										</table>
-                    				</div>
+										}
+										?>
 								</div>
 							</div>
 						</div>
 					</div>
-=======
-					<table>
-						<tr>
-							<th rowspan="2">Alternatif</th>
-							<th colspan="6">Kriteria</th>
-						</tr>
-						<tr>
-							<th>C1</th>
-							<th>C2</th>
-							<th>C3</th>
-							<th>C4</th>
-							<th>C5</th>
-							<th>C6</th>
-						</tr>
-
-						<tr>
-							<td>echo $id</td>
-							<td>{{ $alternatif->alternatif}}</td>
-						</tr>
-
-					</table>
-
-
-					<div class="card-footer">
-                  		<button type="submit" class="btn btn-primary">Submit</button>
-                	</div>
->>>>>>> 11d8d51758bf4a8a8ed26456b031bf5a59e3a2fb
 
 				</div>
 			</main>

@@ -47,8 +47,13 @@
             			</a>
 					</li>
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="matriksalternatif.php">
-              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Matriks Alternatif</span>
+						<a class="sidebar-link" href="tambah-matriks.php">
+              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
+            			</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="perhitungan.php">
+              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Perhitungan</span>
             			</a>
 					</li>
 					<li class="sidebar-item">
