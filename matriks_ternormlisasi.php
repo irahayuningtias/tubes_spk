@@ -25,6 +25,38 @@ include 'config.php';
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
+<style>
+         table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+			}
+
+			td, th {
+			border: 1px solid #dddddd;
+			text-align: center;
+			padding: 8px;
+			}
+
+			tr{
+				height: 35px;
+			}
+
+			tr:nth-child(even) {
+			background-color: rgba(150, 212, 212, 0.4);
+			}
+
+         .card-footer{
+            top: 500px;
+         }
+
+         .container h4{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            
+         }
+</style>
+
 <body>
    <div class="wrapper">
       <nav id="sidebar" class="sidebar js-sidebar">
@@ -79,10 +111,10 @@ include 'config.php';
                            <!-- Matriks -->
                            <ul class="nav nav-tabs">
                               <li class="nav-item">
-                                 <a class="nav-link active" aria-current="page" href="#">Isi Matriks</a>
+                                 <a class="nav-link" aria-current="page" href="#">Isi Matriks</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" aria-current="page" href="matriks_ternormlisasi.php">Nilai Matriks
+                                 <a class="nav-link active" aria-current="page" href="matriks_ternormlisasi.php">Nilai Matriks
                                     Ternomalisasi</a>
                               </li>
                               <li class="nav-item">
@@ -104,12 +136,12 @@ include 'config.php';
 
                         ?>
 
-                        <div class="box-header">
-                           <h3 class="box-title ">Nilai Matriks Ternormalisasi</h3>
+                        <div class="container">
+                           <h4>Nilai Matriks Ternormalisasi</h4>
                         </div>
 
-                        <table class="table table-bordered table-responsive">
-                           <thead>
+                        <table>
+
                               <tr>
                                  <th rowspan="2">NO</th>
                                  <th rowspan="2">Keterangan</th>
@@ -122,7 +154,7 @@ include 'config.php';
                                  }
                                  ?>
                               </tr>
-                           </thead>
+   
                            <tbody>
                               <?php
                               $i = 0;
@@ -134,8 +166,8 @@ include 'config.php';
 
 
                                  echo "<tr>
-		<td>" . (++$i) . "</td>
-		<td>$da[keterangan]</td>";
+                                    <td>" . (++$i) . "</td>
+                                    <td>$da[keterangan]</td>";
                                  $idalt = $da['id_alt'];
 
                                  //ambil nilai
@@ -159,34 +191,18 @@ include 'config.php';
                                  echo "</tr>\n";
 
                               }
-                              ?>
-
-                           </tbody>
-                        </table>
-
+                                 ?>
+                              </tbody>
+                           </table>
+                        </div>
                      </div>
                   </div>
                </div>
             </div>
-
-      </div>
-      </main>
-
-      <footer class="footer">
-         <div class="container-fluid">
-            <div class="row text-muted">
-               <div class="col-6 text-start">
-                  <p class="mb-0">
-                     <a class="text-muted" href="" target="_blank"><strong>Sistem Pendukung Keputusan</strong></a> -
-                     <a class="text-muted" href="" target="_blank"><strong>Kelompok 6 SIB 3D</strong></a> &copy;
-                  </p>
-               </div>
-            </div>
+         </main>
          </div>
-      </footer>
-   </div>
-   </div>
-
+         </div>
+      </div>
    <script src="js/app.js"></script>
 
    <!-- matrik -->
