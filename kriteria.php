@@ -71,10 +71,6 @@ include 'config.php';
 						</a>
 					</li>
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="matriksalternatif.php">
-							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Matriks
-								Alternatif</span>
-						</a>
 						<a class="sidebar-link" href="tambah-matriks.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
             			</a>
@@ -96,30 +92,14 @@ include 'config.php';
 		<div class="main">
 			<main class="content">
 				<div class="container-fluid p-0">
-<<<<<<< HEAD
-=======
-
->>>>>>> 902caa37a7664cf09130fc8bac5a00c2dcc71cb7
 					<h1 class="h3 mb-3">Data <strong>Kriteria</strong></h1>
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-<<<<<<< HEAD
 									<a href="createAlternatif.php">
 										<button class="btn btn-primary">Tambah Data</button>
 									</a>
-=======
-									<h5 class="card-title mb-0">Empty card</h5>
-									<!-- Kriteria -->
-									<div class="box-header">
-										<h3 class="box-title">Data Kriteria</h3>
-									</div>
-									<div class="table-responsive">
-
-									</div>
-									<h5 class="card-title mb-0">Kriteria</h5>
->>>>>>> 902caa37a7664cf09130fc8bac5a00c2dcc71cb7
 								</div>
 								<div class="card-body">
 								<div class="table-responsive">
@@ -169,19 +149,6 @@ include 'config.php';
 							</div>
 						</div>
 					</div>
-<<<<<<< HEAD
-=======
-					<h1 class="h3 mb-3">Data <strong>Alternatif</strong></h1>
-					<table>
-						<tr>
-							<th>Kriteria (C)</th>
-							<th>Keterangan</th>
-							<th>Bobot</th>
-							<th>Atribut</th>
-						</tr>
-					</table>
-
->>>>>>> 902caa37a7664cf09130fc8bac5a00c2dcc71cb7
 				</div>
 			</main>
 
