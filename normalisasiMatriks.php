@@ -74,108 +74,36 @@
                         <div class="card-header">
                            <!-- Matriks -->
                            <ul class="nav nav-tabs">
-                              <li class="nav-item">
-                                 <a class="nav-link" aria-current="page" href="#">Isi Matriks</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link active" aria-current="page" href="matriks_ternormlisasi.php">Nilai
-                                    Matriks Ternomalisasi</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="#">Nilai Bobot</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="#">Nilai Bobot</a>
-                              </li>
+                           <li class="nav-item">
+											<a class="nav-link " aria-current="page" href="perhitungan.php">Isi Matriks</a>
+										</li>
+                              			<li class="nav-item">
+											<a class="nav-link" aria-current="page" href="normalisasiBobot.php">Normalisasi Bobot</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link active" aria-current="page" href="normalisasiMatriks.php">Matriks Normalisasi</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" aria-current="page" href="normalisasiTerbobot.php">Matriks Normalisasi Terbobot</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" aria-current="page" href="solusiIdeal.php">Solusi Ideal Positif/Negatif</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" aria-current="page" href="jarakSolusiIdeal.php">Jarak Solusi Ideal Positif/Negatif</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" aria-current="page" href="preferensi.php">Nilai Preferensi</a>
+										</li>
                            </ul>
                            <!-- Isi Matrisk -->
                            <?php
-<<<<<<< HEAD:nilai_utility.php
-<<<<<<< HEAD
                            include("config.php");
                            $s = mysqli_query($connect, "select * from kriteria");
                            $h = mysqli_num_rows($s);
                            ?>
 
-                           <div class="box-header">
-                              <h3 class="box-title ">Nilai Matriks Ternormalisasi</h3>
-                           </div>
-
-                           <table class="table table-bordered table-responsive">
-                              <thead>
-                                 <tr>
-                                    <th rowspan="2">No</th>
-                                    <th rowspan="2">Keterangan</th>
-                                    <th colspan="<?php echo $h; ?>">Kriteria</th>
-                                 </tr>
-                                 <tr>
-                                    <?php
-                                    for ($n = 1; $n <= $h; $n++) {
-                                       echo "<th>C{$n}</th>";
-                                    }
-                                    ?>
-                                 </tr>
-                              </thead>
-                              <tbody>
-                              <?php
-                                    $data = mysqli_query($connect, "SELECT * FROM alternatif ORDER BY id_alt");
-                                    $no = 1;
-                                    while ($alternatif = $data->fetch_assoc()) { ?>
-                                        <tr>
-                                            <td><?= $no++; ?></td>
-                                            <td><?= $alternatif['keterangan'] ?></td>
-                                            <?php
-                                            $alternatifKode = $alternatif['id_alt'];
-                                            $sql = mysqli_query($connect,"SELECT * FROM nilai WHERE id_alt='$alternatifKode' ORDER BY id_criteria");
-                                            while ($data_nilai = mysqli_fetch_assoc($sql)) { ?>
-                                                <?php
-                                                $kriteriaKode = $data_nilai['id_criteria'];
-                                                $sqli = mysqli_query($connect, "SELECT * FROM kriteria WHERE id_criteria='$kriteriaKode' ORDER BY id_criteria");
-                                                while ($kriteria = mysqli_fetch_assoc($sqli)) {
-                                                ?>
-                                                        <?php
-                                                        // nilai tertinggi
-                                                        $sqlMax =  mysqli_query($connect, "SELECT id_criteria, MAX(nilai) AS max FROM nilai WHERE id_criteria='$kriteriaKode' GROUP BY id_criteria");
-                                                        while ($nilai_Max = mysqli_fetch_assoc($sqlMax)) {
-                                                        ?>
-                                                            <?php $nilai_Cmax = $nilai_Max['max']; ?>
-                                                        <?php } ?>
-                                                        <?php
-                                                        // nilai terrendah
-                                                        $sqlMin =  mysqli_query($connect, "SELECT id_criteria, MIN(nilai) AS min FROM nilai WHERE id_criteria='$kriteriaKode' GROUP BY id_criteria");
-                                                        while ($nilai_Min = mysqli_fetch_assoc($sqlMin)) {
-                                                        ?>
-                                                            <?php $nilai_Cmin = $nilai_Min['min']; ?>
-                                                        <?php } ?>
-
-                                                        <!-- proses nilai utiliti -->
-                                                        <td><?= number_format($nilai_utiliti = ($data_nilai['nilai'] - $nilai_Cmin) / ($nilai_Cmax - $nilai_Cmin), 2); ?></td>
-                                                <?php } ?>
-                                            <?php } ?>
-                                        </tr>
-                                    <?php } ?>
-                              </tbody>
-                           </table>
-
-                        </div>
-
-                     </div>
-=======
-include ("config.php");
-$s=mysqli_query($k21,"select * from kriteria");
-$h=mysqli_num_rows($s);
-=======
-                           include("config.php");
-                           $s = mysqli_query($k21, "select * from kriteria");
-                           $h = mysqli_num_rows($s);
->>>>>>> 378fa6d7296b7770a5a264c12edffa30836f49e7:normalisasiMatriks.php
-
-
-                           ?>
-
-                           <div class="box-header">
-                              <h3 class="box-title ">Nilai Matriks Ternormalisasi</h3>
-                           </div>
+                           <br>
 
                            <table class="table table-bordered table-responsive">
                               <thead>
@@ -226,19 +154,11 @@ $h=mysqli_num_rows($s);
 
                                     }
                                     echo "</tr>\n";
-
-<<<<<<< HEAD:nilai_utility.php
-</tbody>
-</table>
-</div>
->>>>>>> 587435bdc231cc6a65f5f875c348cdda4bc888af
-=======
                                  }
                                  ?>
                               </tbody>
                            </table>
                         </div>
->>>>>>> 378fa6d7296b7770a5a264c12edffa30836f49e7:normalisasiMatriks.php
          </main>
 
          <footer class="footer">

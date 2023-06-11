@@ -76,20 +76,26 @@ include 'config.php';
 								<div class="card-header">
 									<!-- Matriks -->
 									<ul class="nav nav-tabs">
-										<li class="nav-item">
-											<a class="nav-link" aria-current="page" href="perhitungan.php">Isi Matriks</a>
+									<li class="nav-item">
+											<a class="nav-link " aria-current="page" href="perhitungan.php">Isi Matriks</a>
 										</li>
-                              <li class="nav-item">
+                              			<li class="nav-item">
 											<a class="nav-link active" aria-current="page" href="normalisasiBobot.php">Normalisasi Bobot</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" aria-current="page" href="normalisasiMatriks.php">Normalisasi Matriks</a>
+											<a class="nav-link" aria-current="page" href="normalisasiMatriks.php">Matriks Normalisasi</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" href="#">Nilai Bobot</a>
+											<a class="nav-link" aria-current="page" href="normalisasiTerbobot.php">Matriks Normalisasi Terbobot</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" href="#">Nilai Bobot</a>
+											<a class="nav-link" aria-current="page" href="solusiIdeal.php">Solusi Ideal Positif/Negatif</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" aria-current="page" href="jarakSolusiIdeal.php">Jarak Solusi Ideal Positif/Negatif</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" aria-current="page" href="preferensi.php">Nilai Preferensi</a>
 										</li>
 									</ul>
 									<!-- Isi Matrisk -->

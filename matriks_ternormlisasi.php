@@ -127,8 +127,6 @@ include 'config.php';
                               </li>
                            </ul>
                            <!-- Isi Matrisk -->
-<<<<<<< HEAD
-
                         </div>
                         <?php
                         include("config.php");
@@ -150,36 +148,6 @@ include 'config.php';
                                  <th colspan="<?php echo $h; ?>">Kriteria</th>
                               </tr>
                               <tr>
-=======
-                           <?php
-                           include("config.php");
-                           $s = mysqli_query($k21, "select * from kriteria");
-                           $h = mysqli_num_rows($s);
-
-
-                           ?>
-
-                           <div class="box-header">
-                              <h3 class="box-title ">Nilai Matriks Ternormalisasi</h3>
-                           </div>
-
-                           <table class="table table-bordered table-responsive">
-                              <thead>
-                                 <tr>
-                                    <th rowspan="2">No</th>
-                                    <th rowspan="2">Keterangan</th>
-                                    <th colspan="<?php echo $h; ?>">Kriteria</th>
-                                 </tr>
-                                 <tr>
-                                    <?php
-                                    for ($n = 1; $n <= $h; $n++) {
-                                       echo "<th>C{$n}</th>";
-                                    }
-                                    ?>
-                                 </tr>
-                              </thead>
-                              <tbody>
->>>>>>> 58a65e2bf97bba112e0da572bdef1aa6bad6d095
                                  <?php
                                  $i = 0;
                                  $a = mysqli_query($k21, "select * from alternatif order by id_alt asc");
