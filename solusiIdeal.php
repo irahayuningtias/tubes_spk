@@ -77,7 +77,7 @@ include 'config.php';
 									<!-- Matriks -->
 									<ul class="nav nav-tabs">
 										<li class="nav-item">
-											<a class="nav-link active" aria-current="page" href="perhitungan.php">Isi Matriks</a>
+											<a class="nav-link" aria-current="page" href="perhitungan.php">Isi Matriks</a>
 										</li>
                               			<li class="nav-item">
 											<a class="nav-link" aria-current="page" href="normalisasiBobot.php">Normalisasi Bobot</a>
@@ -89,7 +89,7 @@ include 'config.php';
 											<a class="nav-link" aria-current="page" href="normalisasiTerbobot.php">Matriks Normalisasi Terbobot</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" aria-current="page" href="solusiIdeal.php">Solusi Ideal Positif/Negatif</a>
+											<a class="nav-link active" aria-current="page" href="solusiIdeal.php">Solusi Ideal Positif/Negatif</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" aria-current="page" href="jarakSolusiIdeal.php">Jarak Solusi Ideal Positif/Negatif</a>

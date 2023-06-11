@@ -1,3 +1,20 @@
+<?php
+	include 'config.php';
+	if(isset($_GET['id_alt'])){
+		header("location:editAlternatif.php");
+	}
+	if(isset($_GET['update'])){
+	$id = $_GET['id_alt'];
+	$sql = "SELECT * FROM alternatif WHERE id_alt='$id'";
+	$query = mysqli_query($connect, $sql);
+	$alt = mysqli_fetch_assoc($query);
+
+	if(mysqli_num_rows($query)<1){
+		die("data tidak ditemukan...");
+	}
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,42 +84,28 @@
 									<h5 class="card-title mb-0">Alternatif</h5>
 								</div>
 								<div class="card-body">
-									<?php
-										include 'config.php';
-										$_ENV = 'tubes_spk.alternatif';
-										if (isset($_GET['id_alt'])){
-											$id = $_GET['id_alt'];
-											$sql = "SELECT * FROM alternatif WHERE id_alt='$id'";
-											$query = mysqli_query($connect, $sql);
-											while($row = mysqli_fetch_array($query)){
-											?>
-											<form method="POST" action="updateAlternatif.php">
-													<table id="add-row" class="display table table-striped table-hover">
-														<tr>
-															<td>Alternatif</td>
-															<td>
-																<input type="hidden" name="id_alt" value="<?php echo $row['id_alt'];?>">
-																<input type="text" name="alternatif" value="<?php echo $row['alternatif'];?>">
-															</td>
-															</tr>
-														<tr>
-															<td>Keterangan</td>
-															<td><input type="text" name="keterangan" value="<?php echo $row['keterangan'];?>"></td>
-														</tr>	
-														<tr>
-															<td><input type="submit" value="Update"></td>
-														</tr>
-													</table>
-											</form>
-											<?php
-											}
-										}
-										?>
+									<form method="POST" action="updateAlternatif.php">
+										<table id="add-row" class="display table table-striped table-hover">
+											<tr>
+												<input type="hidden" name="id_alt" value="<?php echo $alt['id_alt'];?>">
+
+												<label name="alternatif">Alternatif</label>
+												<input type="text" name="alternatif" class="form-control" value="<?php echo $alt['alternatif'];?>" placeholder="Masukkan alternatif">
+											</tr>
+											<tr>
+                                                <br>
+                                                <label name="keterangan">Keterangan</label>
+												<input type="text" name="keterangan" class="form-control" value="<?php echo $alt['keterangan'];?>" placeholder="Masukkan keterangan">
+											</tr>	
+											<tr>
+												<td><br><button class="btn btn-primary" name="update">Update</button>
+											</tr>
+										</table>
+									</form>
 								</div>
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</main>
 
