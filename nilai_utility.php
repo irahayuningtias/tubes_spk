@@ -25,40 +25,6 @@ include 'config.php';
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
-<<<<<<< HEAD
-<style>
-         table {
-			font-family: arial, sans-serif;
-			border-collapse: collapse;
-			width: 100%;
-			}
-
-			td, th {
-			border: 1px solid #dddddd;
-			text-align: center;
-			padding: 8px;
-			}
-
-			tr{
-				height: 35px;
-			}
-
-			tr:nth-child(even) {
-			background-color: rgba(150, 212, 212, 0.4);
-			}
-
-         .card-footer{
-            top: 500px;
-         }
-
-         .container h5{
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 17px;            
-         }
-</style>
-
-=======
->>>>>>> 58a65e2bf97bba112e0da572bdef1aa6bad6d095
 <body>
    <div class="wrapper">
       <nav id="sidebar" class="sidebar js-sidebar">
@@ -127,30 +93,6 @@ include 'config.php';
                               </li>
                            </ul>
                            <!-- Isi Matrisk -->
-<<<<<<< HEAD
-
-                        </div>
-                        <?php
-                        include("config.php");
-                        $s = mysqli_query($k21, "select * from kriteria");
-                        $h = mysqli_num_rows($s);
-
-
-                        ?>
-
-                        <div class="container">
-                           <h5>Nilai Matriks Ternormalisasi</h5>
-                        </div>
-
-                        <table>
-
-                              <tr>
-                                 <th rowspan="2">NO</th>
-                                 <th rowspan="2">Keterangan</th>
-                                 <th colspan="<?php echo $h; ?>">Kriteria</th>
-                              </tr>
-                              <tr>
-=======
                            <?php
                            include("config.php");
                            $s = mysqli_query($k21, "select * from kriteria");
@@ -179,28 +121,66 @@ include 'config.php';
                                  </tr>
                               </thead>
                               <tbody>
->>>>>>> 58a65e2bf97bba112e0da572bdef1aa6bad6d095
-                                 <?php
-                                 $i = 0;
-                                 $a = mysqli_query($k21, "select * from alternatif order by id_alt asc");
+                              <?php
+                                    $data = mysqli_query($k21, "SELECT * FROM alternatif ORDER BY id_alt");
+                                    $no = 1;
+                                    while ($alternatif = $data->fetch_assoc()) { ?>
+                                        <tr>
+                                            <td><?= $no++; ?></td>
+                                            <td><?= $alternatif['keterangan'] ?></td>
+                                            <?php
+                                            $alternatifKode = $alternatif['id_alt'];
+                                            $sql = mysqli_query($k21,"SELECT * FROM nilai WHERE id_alt='$alternatifKode' ORDER BY id_criteria");
+                                            while ($data_nilai = $sql->fetch_assoc()) { ?>
+                                                <?php
+                                                $kriteriaKode = $data_nilai['id_criteria'];
+                                                $sqli = mysqli_query($k21, "SELECT * FROM kriteria WHERE id_criteria='$kriteriaKode' ORDER BY id_criteria");
+                                                while ($kriteria = $sqli->fetch_assoc()) {
+                                                ?>
+                                                    <?php if ($kriteria['tipe'] == "Benefit") { ?>
+                                                        <?php
+                                                        // nilai tertinggi
+                                                        $sqlMax =  mysqli_query($k21, "SELECT id_criteria, MAX(nilai) AS max FROM nilai WHERE id_criteria='$kriteriaKode' GROUP BY id_criteria");
+                                                        while ($nilai_Max = $sqlMax->fetch_assoc()) {
+                                                        ?>
+                                                            <?php $nilai_Cmax = $nilai_Max['max']; ?>
+                                                        <?php } ?>
+                                                        <?php
+                                                        // nilai terrendah
+                                                        $sqlMin =  mysqli_query($k21, "SELECT id_criteria, MIN(nilai) AS min FROM nilai WHERE id_criteria='$kriteriaKode' GROUP BY id_criteria");
+                                                        while ($nilai_Min = $sqlMin->fetch_assoc()) {
+                                                        ?>
+                                                            <?php $nilai_Cmin = $nilai_Min['min']; ?>
+                                                        <?php } ?>
 
+                                                        <!-- proses nilai utiliti -->
+                                                        <td><?= number_format($nilai_utiliti = ($data_nilai['nilai'] - $nilai_Cmin) / ($nilai_Cmax - $nilai_Cmin), 2); ?></td>
 
+                                                    <?php } elseif ($kriteria['tipe'] == "Cost") { ?>
+                                                        <?php
+                                                        // nilai tertinggi
+                                                        $sqlMax =  mysqli_query($k21, "SELECT id_criteria, MAX(nilai) AS max FROM nilai WHERE id_criteria='$kriteriaKode' GROUP BY id_criteria");
+                                                        while ($nilai_Max = $sqlMax->fetch_assoc()) {
+                                                        ?>
+                                                            <?php $nilai_Cmax = $nilai_Max['max']; ?>
+                                                        <?php } ?>
+                                                        <?php
+                                                        // nilai terrendah
+                                                        $sqlMin =  mysqli_query($k21, "SELECT id_criteria, MIN(nilai) AS min FROM nilai WHERE id_criteria='$kriteriaKode' GROUP BY id_criteria");
+                                                        while ($nilai_Min = $sqlMin->fetch_assoc()) {
+                                                        ?>
+                                                            <?php $nilai_Cmin = $nilai_Min['min']; ?>
+                                                        <?php } ?>
 
-                                 while ($da = mysqli_fetch_assoc($a)) {
+                                                        <!-- proses nilai utiliti -->
+                                                        <td><?= number_format($nilai_utiliti = ($nilai_Cmax - $data_nilai['nilai']) / ($nilai_Cmax - $nilai_Cmin), 2);?></td>
 
-
-                                    echo "<tr>
-		<td>" . (++$i) . "</td>
-		<td>$da[keterangan]</td>";
-                                    $idalt = $da['id_alt'];
-
-                                    //ambil nilai
-                                 
-
-
-                                 }
-                                 ?>
-
+                                                    <?php } ?>
+                                                <?php } ?>
+                                            <?php } ?>
+                                        </tr>
+                                    <?php } ?>
+                                
                               </tbody>
                            </table>
 

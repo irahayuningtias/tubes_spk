@@ -63,31 +63,36 @@
 		<div class="main">
 			<main class="content">
 				<div class="container-fluid p-0">
-					<h1 class="h3 mb-3">Tambah <strong> Data Alternatif</strong></h1>
+					<h1 class="h3 mb-3">Tambah <strong> Matriks</strong></h1>
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<h5 class="card-title mb-0">Alternatif</h5>
+									<h5 class="card-title mb-0">Matriks</h5>
 								</div>
 								<div class="card-body">
-									<form method="POST" action="tambahAlternatif.php">
+								<form method="POST" action="tambahMatriks.php">
 										<table>
 											<tr>
-                                                <label name="alternatif">Alternatif</label>
-												<input type="text" name="alternatif" class="form-control" placeholder="Masukkan alternatif">
+                                                <label name="id_alt">ID Alternatif</label>
+												<input type="text" name="id_alt" class="form-control" placeholder="Masukkan alternatif">
 											</tr>	
                                             <tr>
                                                 <br>
-                                                <label name="keterangan">Keterangan</label>
-												<input type="text" name="keterangan" class="form-control" placeholder="Masukkan keterangan">
-											</tr>	
+                                                <label name="id_criteria">ID Kriteria</label>
+												<input type="text" name="id_criteria" class="form-control" placeholder="Masukkan kriteria">
+											</tr>
+                                            <tr>
+                                                <br>
+                                                <label name="nilai">Nilai</label>
+												<input type="float" name="nilai" class="form-control" placeholder="Masukkan bobot">
+											</tr>
 											<tr>
 												<td></td>
 												<td><br><button class="btn btn-primary" type="submit">Submit</button>
 											</tr>
 										</table>
-									</form>
+								</form>
 								</div>
 							</div>
 						</div>
