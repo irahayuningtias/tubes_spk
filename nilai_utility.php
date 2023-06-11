@@ -68,6 +68,34 @@ include 'config.php';
          </div>
       </nav>
 
+      <style>
+			table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+         height: 30px;
+			}
+
+			td, th {
+			border: 1px solid #dddddd;
+			text-align: center;
+			padding: 8px;
+			}
+
+			tr{
+				height: 35px;
+			}
+
+			tr:nth-child(even) {
+			background-color: rgba(150, 212, 212, 0.4);
+			}
+
+         .container h5{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 17px;            
+         }
+		</style>
+
       <div class="main">
          <main class="content">
             <div class="container-fluid p-0">
@@ -82,9 +110,11 @@ include 'config.php';
                                  <a class="nav-link" aria-current="page" href="#">Isi Matriks</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link active" aria-current="page" href="matriks_ternormlisasi.php">Nilai
-                                    Matriks Ternomalisasi</a>
+                                 <a class="nav-link active" aria-current="page" href="nilai_utility.php">Nilai Utility</a>
                               </li>
+                              <li class="nav-item">
+											<a class="nav-link" aria-current="page" href="matriks_ternormlisasi.php">Nilai Matriks Ternomalisasi</a>
+										</li>
                               <li class="nav-item">
                                  <a class="nav-link" href="#">Nilai Bobot</a>
                               </li>
@@ -101,11 +131,11 @@ include 'config.php';
 
                            ?>
 
-                           <div class="box-header">
-                              <h3 class="box-title ">Nilai Matriks Ternormalisasi</h3>
+                           <div class="container">
+                              <h5 class="box-title ">Nilai Utility</h5>
                            </div>
 
-                           <table class="table table-bordered table-responsive">
+                           <table>
                               <thead>
                                  <tr>
                                     <th rowspan="2">No</th>
@@ -179,15 +209,12 @@ include 'config.php';
                                                 <?php } ?>
                                             <?php } ?>
                                         </tr>
-                                    <?php } ?>
-                                
+                                    <?php } ?> 
                               </tbody>
                            </table>
-
                         </div>
-
                      </div>
-         </main>
+                  </main>
 
          <footer class="footer">
             <div class="container-fluid">

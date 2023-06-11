@@ -1,3 +1,9 @@
+<?php
+	include "config.php";
+	$sql=mysqli_query($connect, "select *from kriteria where id_criteria='$_GET[id]'");
+	$data=mysqli_fetch_array($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +28,7 @@
 			font-family: arial, sans-serif;
 			border-collapse: collapse;
 			width: 100%;
+			position: absolute;
 			}
 
 			td, th {
@@ -91,49 +98,31 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title mb-0">Kriteria</h5>
-								</div>
 								<div class="card-body">
-								<form action="updateAlternatif.php" method="post">
-									<table id="add-row" class="display table table-striped table-hover">
+								<form action="updateKriteria.php" method="post">
+									<table>
 										<tr>
-											<td>Kriteria</td>
-											<td>
-											    <input type="hidden" name="id-aly" value="">
-												<input type="text" name="kriteria" value="">
-											</td>
+											<label name="kriteria"> Kriteria </label>
+											<input type="text" name="kriteria" class="form-control" value="<?php echo $data['kriteria']; ?>">
 										</tr>
                                         <tr>
-											<td>Keterangan</td>
-											<td><input type="text" name="keterangan" value=""></td>
+											<label name="keterangan"> Keterangan </label>
+											<input type="text" name="keterangan" class="form-control" value="<?php echo $data['keterangan']; ?>">
 										</tr>
 										<tr>
-											<td>Bobot</td>
-											<td><input type="text" name="bobot" value=""></td>
+											<label name="bobot"> Bobot </label>
+											<input type="text" name="bobot" class="form-control" value="<?php echo $data['bobot']; ?>">
 										</tr>	
                                         <tr>
-											<td>Tipe</td>
-											<td><input type="text" name="tipe" value=""></td>
+											<label name="tipe"> Tipe </label>
+											<input type="text" name="tipe" class="form-control" value="<?php echo $data['tipe']; ?>">
 										</tr>
 										<tr>
-											<td><input type="submit" value="Update"></td>
+											<br>
+											<button class="btn btn-primary" type="submit" name="proses" value="Update"> Update </button>
 										</tr>
 									</table>
 								</form>
-									<?php
-										include 'config.php';
-										$_ENV = 'tubes_spk.alternatif';
-										if (isset($_GET['id_alt'])){
-											$id = $_GET['id_alt'];
-											$sql = "SELECT * FROM alternatif WHERE id_alt='$id'";
-											$query = mysqli_query($connect, $sql);
-											while($row = mysqli_fetch_array($query)){
-											?>
-											<?php
-											}
-										}
-									?>
 								</div>
 							</div>
 						</div>

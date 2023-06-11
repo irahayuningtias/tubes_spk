@@ -22,6 +22,7 @@
 			font-family: arial, sans-serif;
 			border-collapse: collapse;
 			width: 100%;
+			position: absolute;
 			}
 
 			td, th {
@@ -90,20 +91,25 @@
 					<h1 class="h3 mb-3">Edit Data <strong>Alternatif</strong></h1>
 					<div class="row">
 						<div class="col-12">
-							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title mb-0">Alternatif</h5>
-								</div>
+							<div class="card"> 
 								<div class="card-body">
-								<form action="updateAlternatif.php" method="post">
-									<label>Alternatif</label>
-									<td>
-										<input type="hidden" name="id-aly" value="">
-										<input type="text" name="alternatif" value="">
-									</td>
-									<label>Keterangan</label>
-										<td><input type="text" name="keterangan" value=""></td>
-										<td><input type="submit" value="Update"></td>
+								<form method="POST" action="updateAlternatif.php">
+									<table>
+										<tr>
+											<input type="hidden" name="id-alt" value="">
+											<label name="id_alt"> Alternatif</label>
+											<input type="text" name="id_alt" class="form-control" value="">
+										</tr>
+										<tr>
+											<br>
+											<label name="id_ket"> Keterangan</label>
+											<input type="text" name="id_ket" class="form-control" value="">
+										</tr>
+										<tr>
+											<br>
+											<button class="btn btn-primary" type="submit" >Update</button>
+										</tr>
+									</table>
 								</form>
 									<?php
 										include 'config.php';

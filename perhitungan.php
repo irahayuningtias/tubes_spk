@@ -52,7 +52,7 @@ include 'config.php';
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
             			</a>
 					</li>
-					<li class="sidebar-item">
+					<li class="sidebar-item active">
 						<a class="sidebar-link" href="perhitungan.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Perhitungan</span>
             			</a>
@@ -79,8 +79,8 @@ include 'config.php';
 										<li class="nav-item">
 											<a class="nav-link active" aria-current="page" href="#">Isi Matriks</a>
 										</li>
-                              <li class="nav-item">
-											<a class="nav-link" aria-current="page" href="nilai_utility.php">Normalisasi Matriks</a>
+                             			<li class="nav-item">
+											<a class="nav-link" aria-current="page" href="nilai_utility.php">Nilai Utility</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" aria-current="page" href="matriks_ternormlisasi.php">Nilai Matriks Ternomalisasi</a>
@@ -93,7 +93,6 @@ include 'config.php';
 										</li>
 									</ul>
 									<!-- Isi Matrisk -->
-<<<<<<< HEAD
                         <?php
                         include("config.php");
                         $s = mysqli_query($k21, "select * from kriteria");
@@ -148,46 +147,6 @@ include 'config.php';
 
                               </tbody>
                            </table>
-=======
-
-									<h5 class="card-title mb-0">Matriks Keputusan</h5>
-								</div>
-								<div class="card-body">
-									<div class="table-responsive">
-                        				<table id="add-row" class="display table table-striped table-hover">
-											<thead>
-												<tr>
-													<th>ID Alternatif</th>
-													<th>ID Kriteria</th>
-													<th>Nilai</th>
-													<th style="width: 10%">Aksi</th>
-												</tr>
-											</thead>
-											<tbody>
-											<?php
-											$sql = "SELECT * FROM nilai";
-											$query = mysqli_query($connect, $sql);
-											if(!$query){
-												die('SQL Error: '.mysqli_error($connect));
-											}
-
-											while($row = mysqli_fetch_assoc($query)){
-												echo '<tr>
-													<td>'.$row['id_alt'].'</td>
-													<td>'.$row['id_criteria'].'</td>
-													<td>'.$row['nilai'].'</td>
-													</tr>';
-
-											}
-											?>
-											<tr>
-												
-											</tr>
-											</tbody>
-										</table>
-                    				</div>
-								</div>
->>>>>>> 7a210a0c8f03397c88353e7b2a601ffb75b62130
 							</div>
 						</div>
 					</div>

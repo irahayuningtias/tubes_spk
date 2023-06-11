@@ -31,7 +31,7 @@
 					<li class="sidebar-header">
 						Metode SMART-TOPSIS
 					</li>
-					<li class="sidebar-item">
+					<li class="sidebar-item active">
 						<a class="sidebar-link" href="alternatif.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Alternatif</span>
             			</a>
