@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+    include 'config.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,16 +11,11 @@ include 'config.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
 	<meta name="author" content="AdminKit">
-	<meta name="keywords"
-		content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
-
+	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="adminkit-dev/static/img/icons/icon-48x48.png" />
-
 	<link rel="canonical" href="https://demo-basic.adminkit.io/pages-blank.html" />
-
-	<title>Matriks Alternatif</title>
-
+	<title>Alternatif</title>
 	<link href="adminkit-dev/static/css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -38,29 +33,28 @@ include 'config.php';
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="alternatif.php">
-							<i class="align-middle" data-feather="check-square"></i> <span
-								class="align-middle">Alternatif</span>
-						</a>
+              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Alternatif</span>
+            			</a>
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="kriteria.php">
-							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Kriteria</span>
-						</a>
+              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Kriteria</span>
+            			</a>
 					</li>
-					<li>
+					<li class="sidebar-item">
 						<a class="sidebar-link" href="createMatriks.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
             			</a>
 					</li>
-					<li class="sidebar-item">
+                    <li class="sidebar-item">
 						<a class="sidebar-link" href="perhitungan.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Perhitungan</span>
             			</a>
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="logout.php">
-							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Logout</span>
-						</a>
+              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Logout</span>
+            			</a>
 					</li>
 				</ul>
 			</div>
@@ -69,64 +63,36 @@ include 'config.php';
 		<div class="main">
 			<main class="content">
 				<div class="container-fluid p-0">
-					<h1 class="h3 mb-3"><strong>Matriks</strong> Alternatif</h1>
+					<h1 class="h3 mb-3">Tambah <strong> Matriks</strong></h1>
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<!-- Matriks -->
-									<ul class="nav nav-tabs">
-										<li class="nav-item">
-											<a class="nav-link active" aria-current="page" href="#">Isi Matriks</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Nilai Matriks Ternomalisasi</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Nilai Bobot</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Nilai Bobot</a>
-										</li>
-									</ul>
-									<!-- Isi Matrisk -->
-
-									<h5 class="card-title mb-0">Matriks Keputusan</h5>
+									<h5 class="card-title mb-0">Matriks</h5>
 								</div>
 								<div class="card-body">
-									<div class="table-responsive">
-                        				<table id="add-row" class="display table table-striped table-hover">
-											<thead>
-												<tr>
-													<th>ID Alternatif</th>
-													<th>ID Kriteria</th>
-													<th>Nilai</th>
-													<th style="width: 10%">Aksi</th>
-												</tr>
-											</thead>
-											<tbody>
-											<?php
-											$sql = "SELECT * FROM nilai";
-											$query = mysqli_query($connect, $sql);
-											if(!$query){
-												die('SQL Error: '.mysqli_error($connect));
-											}
-
-											while($row = mysqli_fetch_assoc($query)){
-												echo '<tr>
-													<td>'.$row['id_alt'].'</td>
-													<td>'.$row['id_criteria'].'</td>
-													<td>'.$row['nilai'].'</td>
-													</tr>';
-
-											}
-											?>
+								<form method="POST" action="tambahMatriks.php">
+										<table>
 											<tr>
-												
+                                                <label name="id_alt">ID Alternatif</label>
+												<input type="text" name="id_alt" class="form-control" placeholder="Masukkan alternatif">
+											</tr>	
+                                            <tr>
+                                                <br>
+                                                <label name="id_criteria">ID Kriteria</label>
+												<input type="text" name="id_criteria" class="form-control" placeholder="Masukkan kriteria">
 											</tr>
-											</tbody>
+                                            <tr>
+                                                <br>
+                                                <label name="nilai">Nilai</label>
+												<input type="float" name="nilai" class="form-control" placeholder="Masukkan bobot">
+											</tr>
+											<tr>
+												<td></td>
+												<td><br><button class="btn btn-primary" type="submit">Submit</button>
+											</tr>
 										</table>
-                    				</div>
+								</form>
 								</div>
 							</div>
 						</div>
@@ -140,8 +106,7 @@ include 'config.php';
 					<div class="row text-muted">
 						<div class="col-6 text-start">
 							<p class="mb-0">
-								<a class="text-muted" href="" target="_blank"><strong>Sistem Pendukung Keputusan</strong></a> -
-								<a class="text-muted" href="" target="_blank"><strong>Kelompok 6 SIB 3D</strong></a> &copy;
+								<a class="text-muted" href="" target="_blank"><strong>Sistem Pendukung Keputusan</strong></a> - <a class="text-muted" href="" target="_blank"><strong>Kelompok 6 SIB 3D</strong></a>								&copy;
 							</p>
 						</div>
 					</div>
@@ -151,8 +116,6 @@ include 'config.php';
 	</div>
 
 	<script src="js/app.js"></script>
-
-	<!-- matrik -->
 
 </body>
 

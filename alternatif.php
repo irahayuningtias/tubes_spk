@@ -1,24 +1,5 @@
 <?php
     include 'config.php';
-	
-	session_start();
-
-	if(isset($_POST['alternatif'])){
-		$id = $_POST['id'];
-    $alternatif = $_POST['alternatif'];
-
-    $result = mysqli_query($connect, "SELECT *FROM alternatif");
-	
-	if(!$result) { echo "Error: " . mysqli_error($conn); }
-
-    if ($result->num_rows > 0) {
-
-            while($row = $result->fetch_assoc()) {
-                echo $id;
-            }
-		}
-	}
-
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +42,7 @@
             			</a>
 					</li>
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="tambah-matriks.php">
+						<a class="sidebar-link" href="createMatriks.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
             			</a>
 					</li>
@@ -124,7 +105,6 @@
                         				<table id="add-row" class="display table table-striped table-hover">
 											<thead>
 												<tr>
-													<th style="width: 6%">ID</th>
 													<th>Alternatif</th>
 													<th>Keterangan</th>
 													<th style="width: 20%">Aksi</th>
@@ -137,7 +117,6 @@
 											while($row = mysqli_fetch_assoc($query)){
 											?>
 											<tr>
-												<td><?php echo $row['id_alt'];?></td>
 												<td><?php echo $row['alternatif'];?></td>
 												<td><?php echo $row['keterangan'];?></td>
 												<td>
