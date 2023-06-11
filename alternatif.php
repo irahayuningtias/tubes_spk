@@ -124,7 +124,8 @@
                         				<table id="add-row" class="display table table-striped table-hover">
 											<thead>
 												<tr>
-													<th style="width: 6%">Alternatif</th>
+													<th style="width: 6%">ID</th>
+													<th>Alternatif</th>
 													<th>Keterangan</th>
 													<th style="width: 20%">Aksi</th>
 												</tr>
@@ -136,6 +137,7 @@
 											while($row = mysqli_fetch_assoc($query)){
 											?>
 											<tr>
+												<td><?php echo $row['id_alt'];?></td>
 												<td><?php echo $row['alternatif'];?></td>
 												<td><?php echo $row['keterangan'];?></td>
 												<td>
@@ -157,31 +159,6 @@
 							</div>
 						</div>
 					</div>
-					<table>
-						<tr>
-							<th rowspan="2">Alternatif</th>
-							<th colspan="6">Kriteria</th>
-						</tr>
-						<tr>
-							<th>C1</th>
-							<th>C2</th>
-							<th>C3</th>
-							<th>C4</th>
-							<th>C5</th>
-							<th>C6</th>
-						</tr>
-
-						<tr>
-							<td>echo $id</td>
-							<td>{{ $alternatif->alternatif}}</td>
-						</tr>
-
-					</table>
-
-
-					<div class="card-footer">
-                  		<button type="submit" class="btn btn-primary">Submit</button>
-                	</div>
 				</div>
 			</main>
 
