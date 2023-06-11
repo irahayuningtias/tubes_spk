@@ -90,13 +90,14 @@
 		<div class="main">
 			<main class="content">
 				<div class="container-fluid p-0">
-<<<<<<< HEAD
 					<h1 class="h3 mb-3">Data <strong>Kriteria</strong></h1>
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<h5 class="card-title mb-0">Kriteria</h5>
+									<a href="createAlternatif.php">
+										<button class="btn btn-primary">Tambah Data</button>
+									</a>
 								</div>
 								<div class="card-body">
 								<div class="table-responsive">
@@ -105,31 +106,40 @@
 												<tr>
 													<th style="width: 6%">ID</th>
 													<th>Kriteria</th>
+													<th>Keterangan</th>
 													<th>Bobot</th>
 													<th>Tipe</th>
-													<th style="width: 15%">Aksi</th>
+													<th style="width: 20%">Aksi</th>
 												</tr>
 											</thead>
 											<tbody>
 											<?php
-											$sql = "SELECT id_criteria, kriteria, bobot, tipe FROM kriteria";
+											$sql = "SELECT id_criteria, kriteria, keterangan, bobot, tipe FROM kriteria";
 											$query = mysqli_query($connect, $sql);
 											if(!$query){
 												die('SQL Error: '.mysqli_error($connect));
 											}
 
 											while($row = mysqli_fetch_assoc($query)){
-												echo "<tr>";
-												echo "<td>".$row['id_criteria']."</td>";
-												echo "<td>".$row['kriteria']."</td>";
-												echo "<td>".$row['bobot']."</td>";
-												echo "<td>".$row['tipe']."</td>";
-												echo "<td>
-														<a href='edit.php?id=$row[id_criteria]'>Edit</a> | <a href='delete.php?id=$row[id_criteria]'>Delete</a>
-													 </td>";
-												echo "</tr>";
-											}
-											?>
+												?>
+												<tr>
+													<td><?php echo $row['id_criteria'];?></td>
+													<td><?php echo $row['kriteria'];?></td>
+													<td><?php echo $row['keterangan'];?></td>
+													<td><?php echo $row['bobot'];?></td>
+													<td><?php echo $row['tipe'];?></td>
+													<td>
+														<a href="editKriteria.php?id=<?php echo $row['id_criteria'];?>">
+															<button class="btn btn-warning">Edit</button>
+														</a>
+														<a href="hapusKriteria.php?id=<?php echo $row['id_criteria'];?>">
+															<button class="btn btn-danger">Hapus</button>
+														</a>
+													</td>
+												</tr>
+												<?php
+												}
+												?>
 											</tbody>
 										</table>
                     				</div>
@@ -137,18 +147,6 @@
 							</div>
 						</div>
 					</div>
-=======
-					<h1 class="h3 mb-3">Data <strong>Alternatif</strong></h1>
-					<table>
-						<tr>
-							<th>Kriteria (C)</th>
-							<th>Keterangan</th>
-							<th>Bobot</th>
-							<th>Atribut</th>
-						</tr>
-					</table>
->>>>>>> 11d8d51758bf4a8a8ed26456b031bf5a59e3a2fb
-
 				</div>
 			</main>
 
