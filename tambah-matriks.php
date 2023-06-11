@@ -1,5 +1,5 @@
 <?php
-    include 'config.php';
+include 'config.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
 	<meta name="author" content="AdminKit">
-	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+	<meta name="keywords"
+		content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="adminkit-dev/static/img/icons/icon-48x48.png" />
@@ -37,15 +38,23 @@
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="alternatif.php">
-              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Alternatif</span>
-            			</a>
+							<i class="align-middle" data-feather="check-square"></i> <span
+								class="align-middle">Alternatif</span>
+						</a>
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="kriteria.php">
-              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Kriteria</span>
-            			</a>
+							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Kriteria</span>
+						</a>
 					</li>
 					<li class="sidebar-item">
+						<a class="sidebar-link" href="matriksalternatif.php">
+							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
+						</a>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="matriksalternatif.php">
+							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Perhitungan</span>
+						</a>
 						<a class="sidebar-link" href="tambah-matriks.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
             			</a>
@@ -57,8 +66,8 @@
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="logout.php">
-              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Logout</span>
-            			</a>
+							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Logout</span>
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -72,6 +81,23 @@
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
+									<!-- Matriks -->
+									<ul class="nav nav-tabs">
+										<li class="nav-item">
+											<a class="nav-link active" aria-current="page" href="#">Isi Matriks</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="#">Nilai Matriks Ternomalisasi</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="#">Nilai Bobot</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="#">Nilai Bobot</a>
+										</li>
+									</ul>
+									<!-- Isi Matrisk -->
+
 									<h5 class="card-title mb-0">Matriks Keputusan</h5>
 								</div>
 								<div class="card-body">
@@ -123,7 +149,8 @@
 					<div class="row text-muted">
 						<div class="col-6 text-start">
 							<p class="mb-0">
-								<a class="text-muted" href="" target="_blank"><strong>Sistem Pendukung Keputusan</strong></a> - <a class="text-muted" href="" target="_blank"><strong>Kelompok 6 SIB 3D</strong></a>								&copy;
+								<a class="text-muted" href="" target="_blank"><strong>Sistem Pendukung Keputusan</strong></a> -
+								<a class="text-muted" href="" target="_blank"><strong>Kelompok 6 SIB 3D</strong></a> &copy;
 							</p>
 						</div>
 					</div>
@@ -133,6 +160,8 @@
 	</div>
 
 	<script src="js/app.js"></script>
+
+	<!-- matrik -->
 
 </body>
 

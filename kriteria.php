@@ -1,5 +1,5 @@
 <?php
-    include 'config.php';
+include 'config.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
 	<meta name="author" content="AdminKit">
-	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+	<meta name="keywords"
+		content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="adminkit-dev/static/img/icons/icon-48x48.png" />
@@ -60,15 +61,20 @@
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="alternatif.php">
-              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Alternatif</span>
-            			</a>
+							<i class="align-middle" data-feather="check-square"></i> <span
+								class="align-middle">Alternatif</span>
+						</a>
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="kriteria.php">
-              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Kriteria</span>
-            			</a>
+							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Kriteria</span>
+						</a>
 					</li>
 					<li class="sidebar-item">
+						<a class="sidebar-link" href="matriksalternatif.php">
+							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Matriks
+								Alternatif</span>
+						</a>
 						<a class="sidebar-link" href="tambah-matriks.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
             			</a>
@@ -80,8 +86,8 @@
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="logout.php">
-              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Logout</span>
-            			</a>
+							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Logout</span>
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -90,14 +96,30 @@
 		<div class="main">
 			<main class="content">
 				<div class="container-fluid p-0">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 902caa37a7664cf09130fc8bac5a00c2dcc71cb7
 					<h1 class="h3 mb-3">Data <strong>Kriteria</strong></h1>
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
+<<<<<<< HEAD
 									<a href="createAlternatif.php">
 										<button class="btn btn-primary">Tambah Data</button>
 									</a>
+=======
+									<h5 class="card-title mb-0">Empty card</h5>
+									<!-- Kriteria -->
+									<div class="box-header">
+										<h3 class="box-title">Data Kriteria</h3>
+									</div>
+									<div class="table-responsive">
+
+									</div>
+									<h5 class="card-title mb-0">Kriteria</h5>
+>>>>>>> 902caa37a7664cf09130fc8bac5a00c2dcc71cb7
 								</div>
 								<div class="card-body">
 								<div class="table-responsive">
@@ -147,6 +169,19 @@
 							</div>
 						</div>
 					</div>
+<<<<<<< HEAD
+=======
+					<h1 class="h3 mb-3">Data <strong>Alternatif</strong></h1>
+					<table>
+						<tr>
+							<th>Kriteria (C)</th>
+							<th>Keterangan</th>
+							<th>Bobot</th>
+							<th>Atribut</th>
+						</tr>
+					</table>
+
+>>>>>>> 902caa37a7664cf09130fc8bac5a00c2dcc71cb7
 				</div>
 			</main>
 
@@ -155,7 +190,8 @@
 					<div class="row text-muted">
 						<div class="col-6 text-start">
 							<p class="mb-0">
-								<a class="text-muted" href="" target="_blank"><strong>Sistem Pendukung Keputusan</strong></a> - <a class="text-muted" href="" target="_blank"><strong>Kelompok 6 SIB 3D</strong></a>								&copy;
+								<a class="text-muted" href="" target="_blank"><strong>Sistem Pendukung Keputusan</strong></a> -
+								<a class="text-muted" href="" target="_blank"><strong>Kelompok 6 SIB 3D</strong></a> &copy;
 							</p>
 						</div>
 					</div>

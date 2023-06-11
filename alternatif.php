@@ -159,7 +159,35 @@
 							</div>
 						</div>
 					</div>
+<<<<<<< HEAD
 
+=======
+					<table>
+						<tr>
+							<th rowspan="2">Alternatif</th>
+							<th colspan="6">Kriteria</th>
+						</tr>
+						<tr>
+							<th>C1</th>
+							<th>C2</th>
+							<th>C3</th>
+							<th>C4</th>
+							<th>C5</th>
+							<th>C6</th>
+						</tr>
+
+						<tr>
+							<td>echo $id</td>
+							<td>{{ $alternatif->alternatif}}</td>
+						</tr>
+
+					</table>
+
+
+					<div class="card-footer">
+                  		<button type="submit" class="btn btn-primary">Submit</button>
+                	</div>
+>>>>>>> 902caa37a7664cf09130fc8bac5a00c2dcc71cb7
 				</div>
 			</main>
 
