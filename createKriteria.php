@@ -63,24 +63,38 @@
 		<div class="main">
 			<main class="content">
 				<div class="container-fluid p-0">
-					<h1 class="h3 mb-3">Tambah <strong> Data Alternatif</strong></h1>
+					<h1 class="h3 mb-3">Tambah <strong> Data Kriteria</strong></h1>
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<h5 class="card-title mb-0">Alternatif</h5>
+									<h5 class="card-title mb-0">Kriteria</h5>
 								</div>
 								<div class="card-body">
-									<form method="POST" action="tambahAlternatif.php">
+									<form method="POST" action="tambahKriteria.php">
 										<table>
 											<tr>
-                                                <label name="alternatif">Alternatif</label>
-												<input type="text" name="alternatif" class="form-control" placeholder="Masukkan alternatif">
+                                                <label name="kriteria">Kriteria</label>
+												<input type="text" name="kriteria" class="form-control" placeholder="Masukkan kriteria">
 											</tr>	
                                             <tr>
                                                 <br>
                                                 <label name="keterangan">Keterangan</label>
 												<input type="text" name="keterangan" class="form-control" placeholder="Masukkan keterangan">
+											</tr>
+                                            <tr>
+                                                <br>
+                                                <label name="bobot">Bobot</label>
+												<input type="float" name="bobot" class="form-control" placeholder="Masukkan bobot">
+											</tr>
+                                            <tr>
+                                                <br>
+                                                <label name="tipe">Tipe</label>
+                                                <select class="form-select mb-3" name='tipe'>
+                                                    <option selected>Pilih tipe</option>
+                                                    <option>Benefit</option>
+                                                    <option>Cost</option>
+                                                </select>
 											</tr>	
 											<tr>
 												<td></td>

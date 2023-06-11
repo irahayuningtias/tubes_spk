@@ -136,6 +136,7 @@ include 'config.php';
                                     $idalt = $da['id_alt'];
 
                                     //ambil nilai
+                                 
 
 
                                  }

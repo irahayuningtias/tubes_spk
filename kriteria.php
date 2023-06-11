@@ -71,7 +71,7 @@ include 'config.php';
 						</a>
 					</li>
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="tambah-matriks.php">
+						<a class="sidebar-link" href="createMatriks.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
             			</a>
 					</li>
@@ -97,7 +97,7 @@ include 'config.php';
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<a href="createAlternatif.php">
+									<a href="createKriteria.php">
 										<button class="btn btn-primary">Tambah Data</button>
 									</a>
 								</div>
@@ -106,7 +106,6 @@ include 'config.php';
                         				<table id="add-row" class="display table table-striped table-hover">
 											<thead>
 												<tr>
-													<th style="width: 6%">ID</th>
 													<th>Kriteria</th>
 													<th>Keterangan</th>
 													<th>Bobot</th>
@@ -125,7 +124,6 @@ include 'config.php';
 											while($row = mysqli_fetch_assoc($query)){
 												?>
 												<tr>
-													<td><?php echo $row['id_criteria'];?></td>
 													<td><?php echo $row['kriteria'];?></td>
 													<td><?php echo $row['keterangan'];?></td>
 													<td><?php echo $row['bobot'];?></td>
