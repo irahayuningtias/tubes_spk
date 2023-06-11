@@ -90,6 +90,7 @@
                            </ul>
                            <!-- Isi Matrisk -->
                            <?php
+<<<<<<< HEAD
                            include("config.php");
                            $s = mysqli_query($connect, "select * from kriteria");
                            $h = mysqli_num_rows($s);
@@ -158,6 +159,74 @@
                         </div>
 
                      </div>
+=======
+include ("config.php");
+$s=mysqli_query($k21,"select * from kriteria");
+$h=mysqli_num_rows($s);
+
+
+?>
+
+<div class="box-header">
+    <h3 class="box-title " >Nilai Matriks Ternormalisasi</h3>
+</div>
+
+<table class="table table-bordered table-responsive">
+<thead>
+<tr>
+<th rowspan="2">No</th>
+<th rowspan="2">Keterangan</th>
+<th colspan="<?php echo $h; ?>">Kriteria</th>
+</tr>
+<tr>
+<?php
+for($n=1;$n<=$h;$n++){
+	echo"<th>C{$n}</th>";
+}
+?>
+</tr>
+</thead>
+<tbody>
+<?php
+$i=0;
+$a=mysqli_query($k21,"select * from alternatif order by id_alt asc");
+
+
+
+while($da=mysqli_fetch_assoc($a)){
+
+
+	echo "<tr>
+		<td>".(++$i)."</td>
+		<td>$da[keterangan]</td>";
+		$idalt=$da['id_alt'];
+	//ambil nilai
+			
+			$n=mysqli_query($k21,"select * from nilai where id_alt='$idalt' order by id_nilai asc" );
+	
+		while($dn=mysqli_fetch_assoc($n)){
+			$idk=$dn['id_criteria'];
+			
+			//nilai kuadrat
+			
+			$nilai_kuadrat=0;
+			$k=mysqli_query($k21,"select * from nilai where id_criteria='$idk' ");
+			while($dkuadrat=mysqli_fetch_assoc($k)){
+				$nilai_kuadrat=$nilai_kuadrat+($dkuadrat['nilai']*$dkuadrat['nilai']);
+			}	
+				
+			echo "<td align='center'>".round(($dn['nilai']/sqrt($nilai_kuadrat)),3)."</td>";
+			
+		}
+		echo "</tr>\n";
+
+}
+?>
+
+</tbody>
+</table>
+</div>
+>>>>>>> 587435bdc231cc6a65f5f875c348cdda4bc888af
          </main>
 
          <footer class="footer">

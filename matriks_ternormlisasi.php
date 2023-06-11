@@ -25,6 +25,40 @@ include 'config.php';
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
+<<<<<<< HEAD
+<style>
+         table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+			}
+
+			td, th {
+			border: 1px solid #dddddd;
+			text-align: center;
+			padding: 8px;
+			}
+
+			tr{
+				height: 35px;
+			}
+
+			tr:nth-child(even) {
+			background-color: rgba(150, 212, 212, 0.4);
+			}
+
+         .card-footer{
+            top: 500px;
+         }
+
+         .container h5{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 17px;            
+         }
+</style>
+
+=======
+>>>>>>> 58a65e2bf97bba112e0da572bdef1aa6bad6d095
 <body>
    <div class="wrapper">
       <nav id="sidebar" class="sidebar js-sidebar">
@@ -93,6 +127,30 @@ include 'config.php';
                               </li>
                            </ul>
                            <!-- Isi Matrisk -->
+<<<<<<< HEAD
+
+                        </div>
+                        <?php
+                        include("config.php");
+                        $s = mysqli_query($k21, "select * from kriteria");
+                        $h = mysqli_num_rows($s);
+
+
+                        ?>
+
+                        <div class="container">
+                           <h5>Nilai Matriks Ternormalisasi</h5>
+                        </div>
+
+                        <table>
+
+                              <tr>
+                                 <th rowspan="2">NO</th>
+                                 <th rowspan="2">Keterangan</th>
+                                 <th colspan="<?php echo $h; ?>">Kriteria</th>
+                              </tr>
+                              <tr>
+=======
                            <?php
                            include("config.php");
                            $s = mysqli_query($k21, "select * from kriteria");
@@ -121,6 +179,7 @@ include 'config.php';
                                  </tr>
                               </thead>
                               <tbody>
+>>>>>>> 58a65e2bf97bba112e0da572bdef1aa6bad6d095
                                  <?php
                                  $i = 0;
                                  $a = mysqli_query($k21, "select * from alternatif order by id_alt asc");

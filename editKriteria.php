@@ -1,20 +1,3 @@
-<?php
-	include 'config.php';
-	if(isset($_GET['id_alt'])){
-		header("location:editAlternatif.php");
-	}
-	if(isset($_GET['update'])){
-	$id = $_GET['id_alt'];
-	$sql = "SELECT * FROM alternatif WHERE id_alt='$id'";
-	$query = mysqli_query($connect, $sql);
-	$alt = mysqli_fetch_assoc($query);
-
-	if(mysqli_num_rows($query)<1){
-		die("data tidak ditemukan...");
-	}
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,7 +66,7 @@
             			</a>
 					</li>
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="createMatriks.php">
+						<a class="sidebar-link" href="tambah-matriks.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
             			</a>
 					</li>
@@ -104,43 +87,39 @@
 		<div class="main">
 			<main class="content">
 				<div class="container-fluid p-0">
-					<h1 class="h3 mb-3">Edit Data <strong>Alternatif</strong></h1>
+					<h1 class="h3 mb-3">Edit Data <strong>Kriteria</strong></h1>
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<h5 class="card-title mb-0">Alternatif</h5>
+									<h5 class="card-title mb-0">Kriteria</h5>
 								</div>
 								<div class="card-body">
-<<<<<<< HEAD
-									<form method="POST" action="updateAlternatif.php">
-										<table id="add-row" class="display table table-striped table-hover">
-											<tr>
-												<input type="hidden" name="id_alt" value="<?php echo $alt['id_alt'];?>">
-
-												<label name="alternatif">Alternatif</label>
-												<input type="text" name="alternatif" class="form-control" value="<?php echo $alt['alternatif'];?>" placeholder="Masukkan alternatif">
-											</tr>
-											<tr>
-                                                <br>
-                                                <label name="keterangan">Keterangan</label>
-												<input type="text" name="keterangan" class="form-control" value="<?php echo $alt['keterangan'];?>" placeholder="Masukkan keterangan">
-											</tr>	
-											<tr>
-												<td><br><button class="btn btn-primary" name="update">Update</button>
-											</tr>
-										</table>
-									</form>
-=======
 								<form action="updateAlternatif.php" method="post">
-									<label>Alternatif</label>
-									<td>
-										<input type="hidden" name="id-aly" value="">
-										<input type="text" name="alternatif" value="">
-									</td>
-									<label>Keterangan</label>
-										<td><input type="text" name="keterangan" value=""></td>
-										<td><input type="submit" value="Update"></td>
+									<table id="add-row" class="display table table-striped table-hover">
+										<tr>
+											<td>Kriteria</td>
+											<td>
+											    <input type="hidden" name="id-aly" value="">
+												<input type="text" name="kriteria" value="">
+											</td>
+										</tr>
+                                        <tr>
+											<td>Keterangan</td>
+											<td><input type="text" name="keterangan" value=""></td>
+										</tr>
+										<tr>
+											<td>Bobot</td>
+											<td><input type="text" name="bobot" value=""></td>
+										</tr>	
+                                        <tr>
+											<td>Tipe</td>
+											<td><input type="text" name="tipe" value=""></td>
+										</tr>
+										<tr>
+											<td><input type="submit" value="Update"></td>
+										</tr>
+									</table>
 								</form>
 									<?php
 										include 'config.php';
@@ -155,11 +134,11 @@
 											}
 										}
 									?>
->>>>>>> 587435bdc231cc6a65f5f875c348cdda4bc888af
 								</div>
 							</div>
 						</div>
 					</div>
+
 				</div>
 			</main>
 
