@@ -80,7 +80,7 @@ include 'config.php';
 											<a class="nav-link active" aria-current="page" href="#">Isi Matriks</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" href="#">Nilai Matriks Ternomalisasi</a>
+											<a class="nav-link" aria-current="page" href="matriks_ternormlisasi.php">Nilai Matriks Ternomalisasi</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" href="#">Nilai Bobot</a>
