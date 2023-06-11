@@ -49,13 +49,15 @@ include 'config.php';
 					</li>
 					<li>
 						<a class="sidebar-link" href="createMatriks.php">
-              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
-            			</a>
+							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah
+								Matriks</span>
+						</a>
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="perhitungan.php">
-              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Perhitungan</span>
-            			</a>
+							<i class="align-middle" data-feather="check-square"></i> <span
+								class="align-middle">Perhitungan</span>
+						</a>
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="logout.php">
@@ -79,82 +81,116 @@ include 'config.php';
 										<li class="nav-item">
 											<a class="nav-link" aria-current="page" href="perhitungan.php">Isi Matriks</a>
 										</li>
-                              			<li class="nav-item">
-											<a class="nav-link" aria-current="page" href="normalisasiBobot.php">Normalisasi Bobot</a>
+										<li class="nav-item">
+											<a class="nav-link" aria-current="page" href="normalisasiBobot.php">Normalisasi
+												Bobot</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" aria-current="page" href="normalisasiMatriks.php">Matriks Normalisasi</a>
+											<a class="nav-link" aria-current="page" href="normalisasiMatriks.php">Matriks
+												Normalisasi</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link active" aria-current="page" href="normalisasiTerbobot.php">Matriks Normalisasi Terbobot</a>
+											<a class="nav-link active" aria-current="page" href="normalisasiTerbobot.php">Matriks
+												Normalisasi Terbobot</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" aria-current="page" href="solusiIdeal.php">Solusi Ideal Positif/Negatif</a>
+											<a class="nav-link" aria-current="page" href="solusiIdeal.php">Solusi Ideal
+												Positif/Negatif</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" aria-current="page" href="jarakSolusiIdeal.php">Jarak Solusi Ideal Positif/Negatif</a>
+											<a class="nav-link" aria-current="page" href="jarakSolusiIdeal.php">Jarak Solusi Ideal
+												Positif/Negatif</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" aria-current="page" href="preferensi.php">Nilai Preferensi</a>
 										</li>
 									</ul>
 									<!-- Isi Matrisk -->
-                        <?php
-                        include("config.php");
-                        $s = mysqli_query($k21, "select * from kriteria");
-                        $h = mysqli_num_rows($s);
-
-
-                        ?>
-						<br>
-                        <div class="table table-bordered table-responsive">
-                           <table class="table table-bordered table-responsive">
-                              <thead>
-                                 <tr>
-                                    <th rowspan="2">No</th>
-                                    <th rowspan="2">Keterangan</th>
-                                    <th colspan="<?php echo $h; ?>">Kriteria</th>
-                                 </tr>
-                                 <tr>
-                                    <?php
-                                    for ($n = 1; $n <= $h; $n++) {
-                                       echo "<th>C{$n}</th>";
-                                    }
-                                    ?>
-                                 </tr>
-                              </thead>
-                              <tbody>
-                                 <?php
-                                 $i = 0;
-                                 $a = mysqli_query($k21, "select * from alternatif order by id_alt asc;");
+									<?php
+									include("config.php");
+									$s = mysqli_query($k21, "select * from kriteria ");
+									$h = mysqli_num_rows($s);
+									
+									?>
+									<br>
+									<table class="table table-bordered table-responsive">
+										<thead>
+											<tr>
+												<th rowspan="2">No</th>
+												<th rowspan="2">Nama</th>
+												<th colspan="<?php echo $h; ?>">Kriteria</th>
+											</tr>
+											<tr>
+												<?php
+												for ($n = 1; $n <= $h; $n++) {
+													echo "<th>C{$n}</th>";
+												}
+												?>
+											</tr>
+										</thead>
+										<tbody>
+											<?php
+											$i = 0;
+											$a = mysqli_query($k21, "select * from alternatif order by id_alt asc");
 
 
 
-                                 while ($da = mysqli_fetch_assoc($a)) {
-                                    echo "<tr>
+											while ($da = mysqli_fetch_assoc($a)) {
+
+
+												echo "<tr>
 		<td>" . (++$i) . "</td>
-		<td>" . $da['keterangan'] . "</td>";
-                                    $idalt = $da['id_alt'];
-                                    //ambil nilai
-                                    $n = mysqli_query($k21, "select * from nilai where id_alt='$idalt' order by id_nilai asc");
+		<td>$da[keterangan]</td>";
+												$idalt = $da['id_alt'];
 
-                                    while ($dn = mysqli_fetch_assoc($n)) {
+												//ambil nilai
+											
+												$n = mysqli_query($k21, "select * from nilai where id_alt='$idalt' order by id_nilai asc");
 
-                                       echo "<td align='center'>$dn[nilai]</td>";
-                                    }
-                                    echo "</tr>\n";
+												while ($dn = mysqli_fetch_assoc($n)) {
+													$idk = $dn['id_criteria'];
 
-                                 }
+													//nilai kuadrat
+											
+													$nilai_kuadrat = 0;
+													$k = mysqli_query($k21, "select * from nilai where id_criteria='$idk' ");
+													while ($dkuadrat = mysqli_fetch_assoc($k)) {
+														$nilai_kuadrat = $nilai_kuadrat + ($dkuadrat['nilai'] * $dkuadrat['nilai']);
+													}
 
-                                 ?>
+													//hitung jml alternatif
+													$jml_alternatif = mysqli_query($k21, "select * from alternatif");
+													$jml_a = mysqli_num_rows($jml_alternatif);
+													//nilai bobot kriteria (rata")
+													$bobot = 0;
+													$tnilai = 0;
 
-                              </tbody>
-                           </table>
+													$k2 = mysqli_query($k21, "select * from nilai where id_criteria='$idk' ");
+													while ($dbobot = mysqli_fetch_assoc($k2)) {
+														$tnilai = $tnilai + $dbobot['nilai'];
+													}
+													$bobot = $tnilai / $jml_a;
+
+													//nilai bobot input
+													$b2 = mysqli_query($k21, "select * from kriteria where id_criteria='$idk'");
+													$nbot = mysqli_fetch_assoc($b2);
+													$bot = $nbot['bobot'];
+
+													echo "<td align='center'>" . round(($dn['nilai'] / sqrt($nilai_kuadrat)) * $bot, 6) . "</td>";
+
+												}
+												echo "</tr>\n";
+
+											}
+											?>
+
+										</tbody>
+									</table>
+								</div>
 							</div>
 						</div>
-					</div>
 
-				</div>
+					</div>
 			</main>
 
 			<footer class="footer">

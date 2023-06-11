@@ -150,7 +150,7 @@
                                           $nilai_kuadrat = $nilai_kuadrat + ($dkuadrat['nilai'] * $dkuadrat['nilai']);
                                        }
 
-                                       echo "<td align='center'>" . round(($dn['nilai'] / sqrt($nilai_kuadrat)), 3) . "</td>";
+                                       echo "<td align='center'>" . round(($dn['nilai'] / sqrt($nilai_kuadrat)), 6) . "</td>";
 
                                     }
                                     echo "</tr>\n";
