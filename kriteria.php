@@ -97,9 +97,22 @@ include 'config.php';
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
+<<<<<<< HEAD
 									<a href="createAlternatif.php">
 										<button class="btn btn-primary">Tambah Data</button>
 									</a>
+=======
+									<h5 class="card-title mb-0">Empty card</h5>
+									<!-- Kriteria -->
+									<div class="box-header">
+										<h3 class="box-title">Data Kriteria</h3>
+									</div>
+									<div class="table-responsive">
+
+									</div>
+
+									<h5 class="card-title mb-0">Kriteria</h5>
+>>>>>>> 92f576a3e8a0549e3602ce9e4058b1fb5b5de3a0
 								</div>
 								<div class="card-body">
 								<div class="table-responsive">
