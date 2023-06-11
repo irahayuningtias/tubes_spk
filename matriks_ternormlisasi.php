@@ -50,10 +50,9 @@ include 'config.php';
             top: 500px;
          }
 
-         .container h4{
+         .container h5{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 20px;
-            
+            font-size: 17px;            
          }
 </style>
 
@@ -126,7 +125,6 @@ include 'config.php';
                            </ul>
                            <!-- Isi Matrisk -->
 
-                           <h5 class="card-title mb-0">Matriks Keputusan</h5>
                         </div>
                         <?php
                         include("config.php");
@@ -137,7 +135,7 @@ include 'config.php';
                         ?>
 
                         <div class="container">
-                           <h4>Nilai Matriks Ternormalisasi</h4>
+                           <h5>Nilai Matriks Ternormalisasi</h5>
                         </div>
 
                         <table>

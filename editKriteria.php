@@ -87,23 +87,39 @@
 		<div class="main">
 			<main class="content">
 				<div class="container-fluid p-0">
-					<h1 class="h3 mb-3">Edit Data <strong>Alternatif</strong></h1>
+					<h1 class="h3 mb-3">Edit Data <strong>Kriteria</strong></h1>
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<h5 class="card-title mb-0">Alternatif</h5>
+									<h5 class="card-title mb-0">Kriteria</h5>
 								</div>
 								<div class="card-body">
 								<form action="updateAlternatif.php" method="post">
-									<label>Alternatif</label>
-									<td>
-										<input type="hidden" name="id-aly" value="">
-										<input type="text" name="alternatif" value="">
-									</td>
-									<label>Keterangan</label>
-										<td><input type="text" name="keterangan" value=""></td>
-										<td><input type="submit" value="Update"></td>
+									<table id="add-row" class="display table table-striped table-hover">
+										<tr>
+											<td>Kriteria</td>
+											<td>
+											    <input type="hidden" name="id-aly" value="">
+												<input type="text" name="kriteria" value="">
+											</td>
+										</tr>
+                                        <tr>
+											<td>Keterangan</td>
+											<td><input type="text" name="keterangan" value=""></td>
+										</tr>
+										<tr>
+											<td>Bobot</td>
+											<td><input type="text" name="bobot" value=""></td>
+										</tr>	
+                                        <tr>
+											<td>Tipe</td>
+											<td><input type="text" name="tipe" value=""></td>
+										</tr>
+										<tr>
+											<td><input type="submit" value="Update"></td>
+										</tr>
+									</table>
 								</form>
 									<?php
 										include 'config.php';
