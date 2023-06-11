@@ -46,8 +46,13 @@
             			</a>
 					</li>
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="matriksalternatif.php">
-              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Matriks Alternatif</span>
+						<a class="sidebar-link" href="tambah-matriks.php">
+              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
+            			</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="perhitungan.php">
+              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Perhitungan</span>
             			</a>
 					</li>
 					<li class="sidebar-item">
@@ -67,9 +72,44 @@
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<h5 class="card-title mb-0">Empty card</h5>
+									<h5 class="card-title mb-0">Matriks Keputusan</h5>
 								</div>
 								<div class="card-body">
+									<div class="table-responsive">
+                        				<table id="add-row" class="display table table-striped table-hover">
+											<thead>
+												<tr>
+													<th style="width: 6%">ID</th>
+													<th>Alternatif</th>
+													<th>Kriteria</th>
+													<th>Nilai</th>
+													<th style="width: 10%">Aksi</th>
+												</tr>
+											</thead>
+											<tbody>
+											<?php
+											$sql = "SELECT id_nilai, id_alt, id_criteria, nilai FROM nilai";
+											$query = mysqli_query($connect, $sql);
+											if(!$query){
+												die('SQL Error: '.mysqli_error($connect));
+											}
+
+											while($row = mysqli_fetch_assoc($query)){
+												echo '<tr>
+													<td>'.$row['id_nilai'].'</td>
+													<td>'.$row['id_alt'].'</td>
+													<td>'.$row['id_criteria'].'</td>
+													<td>'.$row['nilai'].'</td>
+													</tr>';
+
+											}
+											?>
+											<tr>
+												
+											</tr>
+											</tbody>
+										</table>
+                    				</div>
 								</div>
 							</div>
 						</div>

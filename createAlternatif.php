@@ -1,5 +1,10 @@
 <?php
     include 'config.php';
+
+	$id = $_POST['id_alt'];
+	$alt = $_POST['alternatif'];
+	mysqli_query($connect, "UPDATE alternatif SET id_alt='$id', alternatif='$alt' WHERE id_alt='$id'");
+	header("Location: alternatif.php");
 ?>
 
 <!DOCTYPE html>
@@ -12,14 +17,10 @@
 	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
 	<meta name="author" content="AdminKit">
 	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
-
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="adminkit-dev/static/img/icons/icon-48x48.png" />
-
 	<link rel="canonical" href="https://demo-basic.adminkit.io/pages-blank.html" />
-
-	<title>Kriteria</title>
-
+	<title>Alternatif</title>
 	<link href="adminkit-dev/static/css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -50,7 +51,7 @@
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
             			</a>
 					</li>
-					<li class="sidebar-item">
+                    <li class="sidebar-item">
 						<a class="sidebar-link" href="perhitungan.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Perhitungan</span>
             			</a>
@@ -67,48 +68,38 @@
 		<div class="main">
 			<main class="content">
 				<div class="container-fluid p-0">
-					<h1 class="h3 mb-3">Data <strong>Kriteria</strong></h1>
+					<h1 class="h3 mb-3">Edit Data <strong>Alternatif</strong></h1>
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<h5 class="card-title mb-0">Kriteria</h5>
+									<h5 class="card-title mb-0">Alternatif</h5>
 								</div>
 								<div class="card-body">
-								<div class="table-responsive">
-                        				<table id="add-row" class="display table table-striped table-hover">
-											<thead>
-												<tr>
-													<th style="width: 6%">ID</th>
-													<th>Kriteria</th>
-													<th>Bobot</th>
-													<th>Tipe</th>
-													<th style="width: 15%">Aksi</th>
-												</tr>
-											</thead>
-											<tbody>
-											<?php
-											$sql = "SELECT id_criteria, kriteria, bobot, tipe FROM kriteria";
-											$query = mysqli_query($connect, $sql);
-											if(!$query){
-												die('SQL Error: '.mysqli_error($connect));
-											}
-
-											while($row = mysqli_fetch_assoc($query)){
-												echo "<tr>";
-												echo "<td>".$row['id_criteria']."</td>";
-												echo "<td>".$row['kriteria']."</td>";
-												echo "<td>".$row['bobot']."</td>";
-												echo "<td>".$row['tipe']."</td>";
-												echo "<td>
-														<a href='edit.php?id=$row[id_criteria]'>Edit</a> | <a href='delete.php?id=$row[id_criteria]'>Delete</a>
-													 </td>";
-												echo "</tr>";
-											}
+									<?php
+										$id = $_GET['id_alt'];
+										$data = mysqli_query($connect, "SELECT * FROM alternatif WHERE id_alt=$id");
+										while($d = mysqli_fetch_array($data)){
 											?>
-											</tbody>
-										</table>
-                    				</div>
+											<form method="POST" action="edit-alternatif.php">
+													<table id="add-row" class="display table table-striped table-hover">
+														<tr>
+															<td>ID</td>
+															<td><input type="text" name="id_alt" value=<?php echo $id;?>></td>
+														</tr>
+														<tr>
+															<td>Alternatif</td>
+															<td><input type="text" name="alternatif" value=<?php echo $alt;?>></td>
+														</tr>	
+														<tr>
+															<td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
+															<td><input type="submit" name="update" value="Update"></td>
+														</tr>
+													</table>
+											</form>
+											<?php
+										}
+										?>
 								</div>
 							</div>
 						</div>

@@ -12,14 +12,10 @@
 	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
 	<meta name="author" content="AdminKit">
 	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
-
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="adminkit-dev/static/img/icons/icon-48x48.png" />
-
 	<link rel="canonical" href="https://demo-basic.adminkit.io/pages-blank.html" />
-
 	<title>Alternatif</title>
-
 	<link href="adminkit-dev/static/css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -46,8 +42,13 @@
             			</a>
 					</li>
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="matriksalternatif.php">
-              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Matriks Alternatif</span>
+						<a class="sidebar-link" href="tambah-matriks.php">
+              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
+            			</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="perhitungan.php">
+              				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Perhitungan</span>
             			</a>
 					</li>
 					<li class="sidebar-item">
@@ -67,9 +68,44 @@
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<h5 class="card-title mb-0">Empty card</h5>
+									<a href="createAlternatif.php">
+										<button class="btn btn-primary">Tambah Data</button>
+									</a>
 								</div>
 								<div class="card-body">
+								<div class="table-responsive">
+                        				<table id="add-row" class="display table table-striped table-hover">
+											<thead>
+												<tr>
+													<th style="width: 6%">Alternatif</th>
+													<th>Keterangan</th>
+													<th style="width: 20%">Aksi</th>
+												</tr>
+											</thead>
+											<tbody>
+											<?php
+											$sql = "SELECT * FROM alternatif";
+											$query = mysqli_query($connect, $sql);
+											while($row = mysqli_fetch_assoc($query)){
+											?>
+											<tr>
+												<td><?php echo $row['alternatif'];?></td>
+												<td><?php echo $row['keterangan'];?></td>
+												<td>
+													<a href="editAlternatif.php?id=<?php echo $row['id_alt'];?>">
+														<button class="btn btn-warning">Edit</button>
+													</a>
+													<a href="hapusAlternatif.php?id=<?php echo $row['id_alt'];?>">
+														<button class="btn btn-danger">Hapus</button>
+													</a>
+												</td>
+											</tr>
+											<?php
+											}
+											?>
+											</tbody>
+										</table>
+                    				</div>
 								</div>
 							</div>
 						</div>
