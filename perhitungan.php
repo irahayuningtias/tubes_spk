@@ -76,28 +76,28 @@ include 'config.php';
 								<div class="card-header">
 									<!-- Matriks -->
 									<ul class="nav nav-tabs">
-										<li class="nav-item">
+									<li class="nav-item">
 											<a class="nav-link active" aria-current="page" href="perhitungan.php">Isi Matriks</a>
 										</li>
-<<<<<<< HEAD
-                             			<li class="nav-item">
-											<a class="nav-link" aria-current="page" href="nilai_utility.php">Nilai Utility</a>
-=======
-                              			<li class="nav-item">
-											<a class="nav-link" aria-current="page" href="normalisasiBobot.php">Normalisasi Bobot</a>
->>>>>>> 13afe9e98480053cd726b462abf875a491b0bebd
+										<li class="nav-item">
+											<a class="nav-link" aria-current="page" href="normalisasiBobot.php">Normalisasi
+												Bobot</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" aria-current="page" href="normalisasiMatriks.php">Matriks Normalisasi</a>
+											<a class="nav-link" aria-current="page" href="normalisasiMatriks.php">Matriks
+												Normalisasi</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" aria-current="page" href="normalisasiTerbobot.php">Matriks Normalisasi Terbobot</a>
+											<a class="nav-link" aria-current="page" href="normalisasiTerbobot.php">Matriks
+												Normalisasi Terbobot</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" aria-current="page" href="solusiIdeal.php">Solusi Ideal Positif/Negatif</a>
+											<a class="nav-link" aria-current="page" href="solusiIdeal.php">Solusi Ideal
+												Positif/Negatif</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" aria-current="page" href="jarakSolusiIdeal.php">Jarak Solusi Ideal Positif/Negatif</a>
+											<a class="nav-link" aria-current="page" href="jarakSolusiIdeal.php">Jarak Solusi Ideal
+												Positif/Negatif</a>
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" aria-current="page" href="preferensi.php">Nilai Preferensi</a>
