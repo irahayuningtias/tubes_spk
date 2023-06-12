@@ -65,7 +65,7 @@ include 'config.php';
 								class="align-middle">Alternatif</span>
 						</a>
 					</li>
-					<li class="sidebar-item">
+					<li class="sidebar-item active">
 						<a class="sidebar-link" href="kriteria.php">
 							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Kriteria</span>
 						</a>

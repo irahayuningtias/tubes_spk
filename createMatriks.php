@@ -41,7 +41,7 @@
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Kriteria</span>
             			</a>
 					</li>
-					<li class="sidebar-item">
+					<li class="sidebar-item active">
 						<a class="sidebar-link" href="createMatriks.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
             			</a>

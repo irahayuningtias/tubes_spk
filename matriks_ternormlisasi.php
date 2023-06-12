@@ -25,7 +25,6 @@ include 'config.php';
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
-<<<<<<< HEAD
 <style>
          table {
 			font-family: arial, sans-serif;
@@ -57,8 +56,6 @@ include 'config.php';
          }
 </style>
 
-=======
->>>>>>> 58a65e2bf97bba112e0da572bdef1aa6bad6d095
 <body>
    <div class="wrapper">
       <nav id="sidebar" class="sidebar js-sidebar">
@@ -116,6 +113,9 @@ include 'config.php';
                                  <a class="nav-link" aria-current="page" href="#">Isi Matriks</a>
                               </li>
                               <li class="nav-item">
+                                 <a class="nav-link" aria-current="page" href="nilai_utility.php">Nilai Utility</a>
+                              </li>
+                              <li class="nav-item">
                                  <a class="nav-link active" aria-current="page" href="matriks_ternormlisasi.php">Nilai
                                     Matriks Ternomalisasi</a>
                               </li>
@@ -127,6 +127,10 @@ include 'config.php';
                               </li>
                            </ul>
                            <!-- Isi Matrisk -->
+<<<<<<< HEAD
+
+=======
+>>>>>>> 13afe9e98480053cd726b462abf875a491b0bebd
                         </div>
                         <?php
                         include("config.php");
@@ -137,11 +141,11 @@ include 'config.php';
                         ?>
 
                         <div class="container">
-                           <h5>Nilai Matriks Ternormalisasi</h5>
+                           <h5 class="box-title">Nilai Matriks Ternormalisasi</h5>
                         </div>
 
                         <table>
-
+                           <thead>
                               <tr>
                                  <th rowspan="2">NO</th>
                                  <th rowspan="2">Keterangan</th>
@@ -152,30 +156,23 @@ include 'config.php';
                                  $i = 0;
                                  $a = mysqli_query($k21, "select * from alternatif order by id_alt asc");
 
-
-
                                  while ($da = mysqli_fetch_assoc($a)) {
 
-
                                     echo "<tr>
-		<td>" . (++$i) . "</td>
-		<td>$da[keterangan]</td>";
+                                       <td>" . (++$i) . "</td>
+                                       <td>$da[keterangan]</td>";
                                     $idalt = $da['id_alt'];
 
                                     //ambil nilai
                                  
-
-
                                  }
                                  ?>
-
-                              </tbody>
-                           </table>
-
-                        </div>
-
+                              </tr>
+                           </thead>
+                        </table>
                      </div>
-         </main>
+                  </div>
+               </main>
 
          <footer class="footer">
             <div class="container-fluid">

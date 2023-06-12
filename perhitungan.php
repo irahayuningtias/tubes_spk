@@ -52,7 +52,7 @@ include 'config.php';
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Tambah Matriks</span>
             			</a>
 					</li>
-					<li class="sidebar-item">
+					<li class="sidebar-item active">
 						<a class="sidebar-link" href="perhitungan.php">
               				<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Perhitungan</span>
             			</a>
@@ -79,8 +79,13 @@ include 'config.php';
 										<li class="nav-item">
 											<a class="nav-link active" aria-current="page" href="perhitungan.php">Isi Matriks</a>
 										</li>
+<<<<<<< HEAD
+                             			<li class="nav-item">
+											<a class="nav-link" aria-current="page" href="nilai_utility.php">Nilai Utility</a>
+=======
                               			<li class="nav-item">
 											<a class="nav-link" aria-current="page" href="normalisasiBobot.php">Normalisasi Bobot</a>
+>>>>>>> 13afe9e98480053cd726b462abf875a491b0bebd
 										</li>
 										<li class="nav-item">
 											<a class="nav-link" aria-current="page" href="normalisasiMatriks.php">Matriks Normalisasi</a>
