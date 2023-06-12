@@ -108,14 +108,9 @@ include 'config.php';
 									</ul>
 									<!-- Isi Matrisk -->
 									<?php
-									$s = mysqli_query($k21, "select * from kriteria");
-									$h = mysqli_num_rows($s);
-									 if(isset($_SESSION['ymax'])){
-										header('location:jarakSolusiIdeal.php');
-										?>
-										<?php
-									 }
-									 ?>
+									@session_start();
+									include ("config.php");
+									?>
 									 
 									 <div class="box-header">
 										  <h3 class="box-title " >Nilai Preferensi</h3>
@@ -194,9 +189,7 @@ include 'config.php';
 									 
 									 }
 									 
-									 
-									 
-									 
+
 									 foreach(@$_SESSION['dplus'] as $key=>$dxmin){
 									 #ubah ke nol hasil akhir
 									  $nilaid=0; 
@@ -231,8 +224,8 @@ include 'config.php';
 										  
 										  //echo "insert into nilai_preferensi (keterangan,nilai) values('$nm','$nilai')";
 											 
-										 
 									 }
+									 
 									  
 									  //ambil data sesuai dengan nilai tertinggi
 									  $i=1;
